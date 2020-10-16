@@ -33,54 +33,40 @@ public class Main {
             if (Carrier.getAmountOfShip() > 0) {
                 System.out.print("Carrier " + Carrier.getCounter() + ": ");
                 readCoordinates(tempA, tempB, in);
-                if(GameBoard.safetyCheck(tempA,tempB)) {
-                    if(Carrier.checkShipSize(tempA,tempB)) {
-                        Carrier s = new Carrier(tempA, tempB);
-                        GameBoard.setShip(s);
-                        Carrier.reduceNumbersLeft();
-                    } else {
-                        System.out.print("The specified input is invalid.");
-                    }
+                if(GameBoard.safetyCheck(tempA,tempB) && Carrier.checkShipSize(tempA,tempB)) {
+                    Carrier s = new Carrier(tempA, tempB);
+                    GameBoard.setShip(s);
+                    Carrier.reduceNumbersLeft();
                 } else {
-                    System.out.print("The specified input is invalid.");
+                    System.out.println("The specified input is invalid.");
                 }
             } else if (BattleShip.getAmountOfShip() > 0){
                 System.out.print("BattleShip " + BattleShip.getCounter() + ": ");
                 readCoordinates(tempA, tempB, in);
-                if(GameBoard.safetyCheck(tempA,tempB)) {
-                    if(BattleShip.checkShipSize(tempA,tempB)) {
-                        BattleShip s = new BattleShip(tempA, tempB);
-                        GameBoard.setShip(s);
-                        BattleShip.reduceNumbersLeft();
-                    }else {
-                        System.out.print("The specified input is invalid.");
-                    }
+                if(GameBoard.safetyCheck(tempA,tempB) && BattleShip.checkShipSize(tempA,tempB)) {
+                    BattleShip s = new BattleShip(tempA, tempB);
+                    GameBoard.setShip(s);
+                    BattleShip.reduceNumbersLeft();
                 } else {
-                    System.out.print("The specified input is invalid.");
+                    System.out.println("The specified input is invalid.");
                 }
             } else if (Submarine.getAmountOfShip() > 0) {
                 System.out.print("Submarine " + Submarine.getCounter() + ": ");
                 readCoordinates(tempA, tempB, in);
-                if(GameBoard.safetyCheck(tempA,tempB)) {
-                    if(Submarine.checkShipSize(tempA,tempB)) {
-                        Submarine s = new Submarine(tempA, tempB);
-                        GameBoard.setShip(s);
-                        Submarine.reduceNumbersLeft();
-                    }else {
-                        System.out.print("The specified input is invalid.");
-                    }
+                if(GameBoard.safetyCheck(tempA,tempB) && Submarine.checkShipSize(tempA,tempB)) {
+                    Submarine s = new Submarine(tempA, tempB);
+                    GameBoard.setShip(s);
+                    Submarine.reduceNumbersLeft();
                 } else {
-                    System.out.print("The specified input is invalid.");
+                    System.out.println("The specified input is invalid.");
                 }
             } else if (PatrolBoat.getAmountOfShip() > 0) {
                 System.out.print("Patrol boat " + PatrolBoat.getCounter() + ": ");
                 readCoordinates(tempA, tempB, in);
-                if(GameBoard.safetyCheck(tempA,tempB)) {
-                    if(PatrolBoat.checkShipSize(tempA,tempB)) {
-                        PatrolBoat s = new PatrolBoat(tempA, tempB);
-                        GameBoard.setShip(s);
-                        PatrolBoat.reduceNumbersLeft();
-                    }
+                if(GameBoard.safetyCheck(tempA,tempB) && PatrolBoat.checkShipSize(tempA,tempB)) {
+                    PatrolBoat s = new PatrolBoat(tempA, tempB);
+                    GameBoard.setShip(s);
+                    PatrolBoat.reduceNumbersLeft();
                 }else {
                     System.out.print("The specified input is invalid.");
                 }
