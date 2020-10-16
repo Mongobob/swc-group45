@@ -43,6 +43,7 @@ public class Location {
         }
     }
 
+
     /** A method that turns the given string into the needed coordinates.
      *
      * @param s - a String consisting of a capital letter (A - J) followed
