@@ -7,6 +7,7 @@ interface Ship {
 
     boolean isValid();
     String getShipType();
+    int getShipLength();
     int getMaxAmount();
     char getShipSymbol();
     boolean checkShipSize(Location a, Location b);

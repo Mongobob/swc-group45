@@ -16,6 +16,12 @@ class Location {
         StringToCor(s);
     }
 
+    // The constructor method that uses integers instead of a String
+    public Location(int w, int h) {
+        this.width = w;
+        this.height = h;
+    }
+
     // Default constructor method for invalid places
     public Location(){
         this.width  = -1;

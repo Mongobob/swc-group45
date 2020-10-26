@@ -41,6 +41,19 @@ public class Main {
         // Welcome the player
         System.out.println("Welcome to Battleship!!\n");
 
+        Board enemy = new Board(gridSize);
+        AiPlayer eve = new AiPlayer(enemy);
+
+        /**
+         * This will have to change it's place. Those to methods make a board for an AI opponent and then print it
+         * for debugging purpose.
+         */
+        //TODO: But this Code Snipped at it's right place.
+        eve.fillTheBoard(enemy);
+        System.out.println("Shhh, this is a secret sneak peak to see what your enemy drew ...");
+        enemy.drawTheBoard();
+        System.out.println("\n");
+
         /**
          * The loop serves to initialize the players board
          */

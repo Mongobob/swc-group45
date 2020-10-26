@@ -2,14 +2,18 @@ package assignment03;
 
 class Board {
 
-    private Ship[][] Grid;
-    private int GridSize;
+    private Ship[][] grid;
+    private int gridSize;
 
-    public Board(int GridSize){
-        Grid = new Ship[GridSize][GridSize];
-        this.GridSize = GridSize;
+    public Board(int gridSize){
+        grid = new Ship[gridSize][gridSize];
+        this.gridSize = gridSize;
     }
 
+    // returns the size of the grid
+    public int getGridSize() {
+        return gridSize;
+    }
 
     /**
      * Method that draws the board at the end.
@@ -22,24 +26,24 @@ class Board {
 
         // printing the header
         System.out.print("   |");
-        for (int i = 0; i < Grid.length; i++) {
+        for (int i = 0; i < grid.length; i++) {
             System.out.print("[" + alphabet[i] + "]");
         }
         System.out.print("\n");
 
         System.out.print("---|");
-        for (int i = 0; i < Grid.length; i++) {
+        for (int i = 0; i < grid.length; i++) {
             System.out.print("---");
         }
         System.out.print("\n");
 
         // printing the actual board
-        for (int h = 0; h < Grid[0].length; h++) {
+        for (int h = 0; h < grid[0].length; h++) {
             System.out.print("[" + h + "]|");
-            for (int i = 0; i < Grid.length; i++) {
+            for (int i = 0; i < grid.length; i++) {
                 System.out.print("[");
-                if (Grid[i][h]!= null) {
-                    System.out.print("" + Grid[i][h].getShipSymbol() + "");
+                if (grid[i][h]!= null) {
+                    System.out.print("" + grid[i][h].getShipSymbol() + "");
                 } else {
                     System.out.print(" ");
                 }
@@ -54,7 +58,7 @@ class Board {
      */
     public boolean safetyCheck(Location a, Location b) {
 
-        return a.isValid(GridSize) && b.isValid(GridSize) && !a.isDiagonal(b) && boardIsFree(a, b);
+        return a.isValid(gridSize) && b.isValid(gridSize) && !a.isDiagonal(b) && boardIsFree(a, b);
     }
 
     /**
@@ -89,7 +93,7 @@ class Board {
         // checking the board if the space is free
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
-                if (Grid[i][h] != null) { // check if one of the spaces is occupied
+                if (grid[i][h] != null) { // check if one of the spaces is occupied
                     return false; // if even one is occupied the input is invalid.
                 }
             }
@@ -99,7 +103,7 @@ class Board {
         return true;
 
     }
-    public void setShip(Ship s){
+    public void setShip(Ship s) {
         int minRow, minCol, maxRow, maxCol;
         Location a = s.getFirstLocation();
         Location b = s.getSecondLocation();
@@ -130,7 +134,7 @@ class Board {
         // if all the spaces are free we can fill them up now
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
-                Grid[i][h] = s;
+                grid[i][h] = s;
             }
         }
     }

@@ -24,6 +24,8 @@ class Submarine implements Ship {
         return b;
     }
 
+    public int getShipLength() { return shipLength; }
+
     public boolean isValid() { return isValid; }
 
     public String getShipType() {
