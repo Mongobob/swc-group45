@@ -1,23 +1,12 @@
 public interface Ship {
 
-    static int counter = 0;
-    static int AmountOfShip = 0;
-    public String getShipType();
+    Location getFirstLocation();
+    Location getSecondLocation();
 
-    static int getAmountOfShip(){
-        return AmountOfShip;
-    }
-    static int getCounter(){
-        return 0;
-    }
+    boolean isValid();
+    String getShipType();
+    int getMaxAmount();
     char getShipSymbol();
-    static boolean checkShipSize(Location a, Location b){
-        return false;
-    }
-    static void reduceNumbersLeft(){}
-
-    public Location getFirstLocation();
-    public Location getSecondLocation();
-
+    boolean checkShipSize(Location a, Location b);
 
 }

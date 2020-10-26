@@ -51,13 +51,8 @@ class Board {
      * A safety check to make sure the given inputs are correct.
      */
     public boolean safetyCheck(Location a, Location b) {
-        // TODO add another check, if the size of the ship was considered
-        if (a.isValid(GridSize) && b.isValid(GridSize) && !a.isDiag(b) && boardIsFree(a, b)) {
-            return true;
-        } else {
-            System.out.println("The specified input is invalid");
-            return false;
-        }
+
+        return a.isValid(GridSize) && b.isValid(GridSize) && !a.isDiagonal(b) && boardIsFree(a, b);
     }
 
     /**

@@ -1,57 +1,46 @@
 public class Submarine implements Ship {
 
-    private final char ShipSymbol = 'S';
-    private static final int ShipLength = 3;
-    private static int AmountOfShips = 3;
-    private static int counter = 1;
+    private final char shipSymbol = 'S';
+    private final int shipLength = 3;
+    private final int maxAmountOfThisType = 3;
+    private boolean isValid;
 
-    private String ShipType = "Submarine";
+    private String shipType = "Submarine";
 
     private Location a;
     private Location b;
 
-    public Submarine(Location a, Location b) {
+    public Submarine(Location a, Location b){
         this.a = a;
         this.b = b;
-        counter++;
+        this.isValid = checkShipSize(a, b);
     }
 
-    public static int getCounter(){
-        return counter;
-    }
-
-    public Location getFirstLocation(){
-        return a;
-    }
+    public Location getFirstLocation(){ return a; }
 
     public Location getSecondLocation(){
         return b;
     }
 
-    @Override
+    public boolean isValid() { return isValid; }
+
     public String getShipType() {
-        return ShipType;
+        return shipType;
     }
 
-    public static int getAmountOfShip() {
-        return AmountOfShips;
-    }
+    public int getMaxAmount() { return maxAmountOfThisType; }
 
-    public char getShipSymbol() { return ShipSymbol; }
+    public char getShipSymbol() { return shipSymbol; }
 
-    public static boolean checkShipSize(Location a, Location b) {
+    public boolean checkShipSize(Location a, Location b) {
 
         // Setup which coordinates need to be checked
         if (a.width == b.width) {
-            return Math.abs(a.height - b.height) == ShipLength - 1;
+            return Math.abs(a.height - b.height) == shipLength - 1;
         } else {
-            return Math.abs(a.width - b.width) == ShipLength - 1;
+            return Math.abs(a.width - b.width) == shipLength - 1;
         }
 
-    }
-
-    public static void reduceNumbersLeft() {
-        AmountOfShips--;
     }
 
 }

@@ -1,53 +1,46 @@
 public class PatrolBoat implements Ship {
 
-    private final char ShipSymbol = 'P';
-    private static final int ShipLength = 2;
-    private static int AmountOfShips = 4;
-    private static int counter = 1;
+    private final char shipSymbol = 'P';
+    private final int shipLength = 2;
+    private final int maxAmountOfThisType = 4;
+    private boolean isValid;
 
-    private String ShipType = "Patrol Boat";
+    private String shipType = "Patrol Boat";
 
     private Location a;
     private Location b;
 
-    public PatrolBoat(Location a, Location b) {
+    public PatrolBoat(Location a, Location b){
         this.a = a;
         this.b = b;
-        counter++;
+        this.isValid = checkShipSize(a, b);
     }
 
-    public static int getCounter(){
-        return counter;
+    public Location getFirstLocation(){ return a; }
+
+    public Location getSecondLocation(){
+        return b;
     }
 
-    public Location getFirstLocation() { return a; }
+    public boolean isValid() { return isValid; }
 
-    public Location getSecondLocation() { return b; }
-
-    @Override
     public String getShipType() {
-        return ShipType;
+        return shipType;
     }
 
-    public static int getAmountOfShip() {
-        return AmountOfShips;
-    }
+    public int getMaxAmount() { return maxAmountOfThisType; }
 
-    public char getShipSymbol() { return ShipSymbol; }
+    public char getShipSymbol() { return shipSymbol; }
 
-    public static boolean checkShipSize(Location a, Location b) {
+    public boolean checkShipSize(Location a, Location b) {
 
         // Setup which coordinates need to be checked
         if (a.width == b.width) {
-            return Math.abs(a.height - b.height) == ShipLength - 1;
+            return Math.abs(a.height - b.height) == shipLength - 1;
         } else {
-            return Math.abs(a.width - b.width) == ShipLength - 1;
+            return Math.abs(a.width - b.width) == shipLength - 1;
         }
 
-    }
-
-    public static void reduceNumbersLeft() {
-        AmountOfShips--;
     }
 
 }
