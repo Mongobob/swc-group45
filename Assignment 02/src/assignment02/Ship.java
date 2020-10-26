@@ -1,4 +1,6 @@
-public interface Ship {
+package assignment02;
+
+interface Ship {
 
     Location getFirstLocation();
     Location getSecondLocation();

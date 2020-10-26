@@ -1,3 +1,5 @@
+package assignment02;
+
 class Board {
 
     private Ship[][] Grid;

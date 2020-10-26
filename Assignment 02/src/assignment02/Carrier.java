@@ -1,4 +1,6 @@
-public class Carrier implements Ship {
+package assignment02;
+
+class Carrier implements Ship {
 
     private final char shipSymbol = 'C';
     private final int shipLength = 6;

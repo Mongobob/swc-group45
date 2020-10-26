@@ -1,10 +1,12 @@
+package assignment02;
+
 /**
  *  This is a helper class to simplify the actions within the other classes.
  *  It safes the inputs of strings as integers and checks if they fit the
  *  description. If not, then the constructor will simply return null.
  */
 
-public class Location {
+class Location {
 
     public int width;
     public int height;

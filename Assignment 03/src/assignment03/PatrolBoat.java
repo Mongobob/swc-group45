@@ -1,16 +1,18 @@
-public class Submarine implements Ship {
+package assignment03;
 
-    private final char shipSymbol = 'S';
-    private final int shipLength = 3;
-    private final int maxAmountOfThisType = 3;
+class PatrolBoat implements Ship {
+
+    private final char shipSymbol = 'P';
+    private final int shipLength = 2;
+    private final int maxAmountOfThisType = 4;
     private boolean isValid;
 
-    private String shipType = "Submarine";
+    private String shipType = "Patrol Boat";
 
     private Location a;
     private Location b;
 
-    public Submarine(Location a, Location b){
+    public PatrolBoat(Location a, Location b){
         this.a = a;
         this.b = b;
         this.isValid = checkShipSize(a, b);
