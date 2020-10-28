@@ -13,6 +13,8 @@ public class Main {
          *
          * There for we are adding fake ships and fake location in order to get the general information before
          * we even great a real boat, which we will indeed use.
+         *
+         * Test. Just to check if the Git Hub Desktop is working.
          */
 
         // These are the fake locations to create the ships
