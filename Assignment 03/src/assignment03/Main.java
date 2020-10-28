@@ -116,6 +116,19 @@ public class Main {
          * This will have to change it's place. Those two methods make a board for an AI opponent and then print it
          * for debugging purpose.
          */
+
+        /** while both have ships both have to shoot
+         * how does the borad look like
+         * show map
+         * AI shoot random if it's we make an Array / show shootfield in class Board
+         * scoreboard - if the hole ship is sunk
+         *
+         * Main --> Spielablauf
+         * ScoreBoard--> eigene klasse Singleton
+         * AI Player --> shoot Method
+         * Board--> show right Chars(X, O, PPP)
+         *
+         */
         //TODO: But this Code Snipped at it's right place.
         eve.fillTheBoard(enemy);
         System.out.println("Shhh, this is a secret sneak peak to see what your enemy drew ...");
