@@ -44,15 +44,7 @@ public class Main {
         Board enemy = new Board(gridSize);
         AiPlayer eve = new AiPlayer(enemy);
 
-        /**
-         * This will have to change it's place. Those to methods make a board for an AI opponent and then print it
-         * for debugging purpose.
-         */
-        //TODO: But this Code Snipped at it's right place.
-        eve.fillTheBoard(enemy);
-        System.out.println("Shhh, this is a secret sneak peak to see what your enemy drew ...");
-        enemy.drawTheBoard();
-        System.out.println("\n");
+
 
         /**
          * The loop serves to initialize the players board
@@ -60,7 +52,7 @@ public class Main {
 
         int curNumOfShips = 0;
         int numOfCar = 0, numOfBat = 0, numOfSub = 0, numOfPat = 0;
-
+        PlayerBoard.drawTheBoard();
         while (totalNumOfShips > curNumOfShips) {
 
             // There is an other ship to be placed
@@ -69,7 +61,7 @@ public class Main {
             Location tempB = new Location();
 
             if (fakeCarrier.getMaxAmount() > numOfCar) {
-                System.out.print("Carrier " + (numOfCar + 1) + ": ");
+                System.out.print("Carrier " + (numOfCar + 1) + " (Size 6): ");
                 readCoordinates(tempA, tempB, in);
                 Carrier s = new Carrier(tempA, tempB);
                 if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
@@ -80,7 +72,7 @@ public class Main {
                     System.out.println("The specified input is invalid.");
                 }
             } else if (fakeBattleShip.getMaxAmount() > numOfBat){
-                System.out.print("BattleShip " + (numOfBat + 1) + ": ");
+                System.out.print("BattleShip " + (numOfBat + 1) + " (Size 4): ");
                 readCoordinates(tempA, tempB, in);
                 BattleShip s = new BattleShip(tempA, tempB);
                 if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
@@ -91,7 +83,7 @@ public class Main {
                     System.out.println("The specified input is invalid.");
                 }
             } else if (fakeSubmarine.getMaxAmount() > numOfSub) {
-                System.out.print("Submarine " + (numOfSub + 1) + ": ");
+                System.out.print("Submarine " + (numOfSub + 1) + " (Size 3): ");
                 readCoordinates(tempA, tempB, in);
                 Submarine s = new Submarine(tempA, tempB);
                 if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
@@ -102,7 +94,7 @@ public class Main {
                     System.out.println("The specified input is invalid.");
                 }
             } else if (fakePatrolBoat.getMaxAmount() > numOfPat) {
-                System.out.print("Patrol boat " + (numOfPat + 1) + ": ");
+                System.out.print("Patrol boat " + (numOfPat + 1) + " (Size 2): ");
                 readCoordinates(tempA, tempB, in);
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
@@ -116,8 +108,17 @@ public class Main {
                 System.out.print("ERROR: No more ships are needed but the initialization loop wont end.");
             }
 
-        }
 
+        }
+        /**
+         * This will have to change it's place. Those two methods make a board for an AI opponent and then print it
+         * for debugging purpose.
+         */
+        //TODO: But this Code Snipped at it's right place.
+        eve.fillTheBoard(enemy);
+        System.out.println("Shhh, this is a secret sneak peak to see what your enemy drew ...");
+        enemy.drawTheBoard();
+        System.out.println("\n");
         PlayerBoard.drawTheBoard();
     }
 
