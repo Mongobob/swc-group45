@@ -10,7 +10,7 @@ public class Scoreboard {
     // instance variables coming here
     private Scoreboard(){}
 
-    public static Scoreboard getInstance(){
+    public static  Scoreboard getInstance(){
         if (uniqueInstance == null){
             synchronized (Scoreboard.class){
                 if (uniqueInstance==null){
@@ -18,6 +18,7 @@ public class Scoreboard {
                 }
             }
         }
+        return uniqueInstance;
     }
 
     private void getScoreboard(){
