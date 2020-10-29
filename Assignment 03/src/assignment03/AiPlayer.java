@@ -11,6 +11,7 @@ class AiPlayer {
     //TODO: make it more reliable. Maybe even DP to find new valid Locations.
 
     private Board myBoard;
+    private Board myShots; //gonna need this one to register shots
     private Random rand = new Random();
 
     public AiPlayer(Board b){
@@ -129,7 +130,7 @@ class AiPlayer {
         return new Location(x,y);
 
     }
-    //public void shoot(Location a; Location b) {
+    //public void shoot() {
 
 
 
