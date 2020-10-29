@@ -8,6 +8,7 @@ class Board {
     public Board(int gridSize){
         grid = new Ship[gridSize][gridSize];
         this.gridSize = gridSize;
+        System.out.println(grid);
     }
 
     // returns the size of the grid

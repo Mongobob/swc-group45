@@ -1,5 +1,6 @@
 package assignment03;
 
+import javax.print.attribute.standard.PresentationDirection;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -128,5 +129,10 @@ class AiPlayer {
         return new Location(x,y);
 
     }
+    //public void shoot(Location a; Location b) {
 
+
+
+
+    //}
 }
