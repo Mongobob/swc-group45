@@ -1,10 +1,13 @@
 package assignment03;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         /**
          * This setup is used because we were advised to avoid using static methods because we will be using
@@ -13,8 +16,6 @@ public class Main {
          *
          * There for we are adding fake ships and fake location in order to get the general information before
          * we even great a real boat, which we will indeed use.
-         *
-         * Test. Just to check if the Git Hub Desktop is working.
          */
 
         // These are the fake locations to create the ships
@@ -43,10 +44,6 @@ public class Main {
         // Welcome the player
         System.out.println("Welcome to Battleship!!\n");
 
-        Board enemy = new Board(gridSize);
-        AiPlayer eve = new AiPlayer(enemy);
-
-
 
         /**
          * The loop serves to initialize the players board
@@ -54,7 +51,7 @@ public class Main {
 
         int curNumOfShips = 0;
         int numOfCar = 0, numOfBat = 0, numOfSub = 0, numOfPat = 0;
-        PlayerBoard.drawTheBoard();
+
         while (totalNumOfShips > curNumOfShips) {
 
             // There is an other ship to be placed
@@ -66,18 +63,18 @@ public class Main {
                 System.out.print("Carrier " + (numOfCar + 1) + " (Size 6): ");
                 readCoordinates(tempA, tempB, in);
                 Carrier s = new Carrier(tempA, tempB);
-                if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
+                if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
                     numOfCar++;
                     curNumOfShips++;
                 } else {
                     System.out.println("The specified input is invalid.");
                 }
-            } else if (fakeBattleShip.getMaxAmount() > numOfBat){
+            } else if (fakeBattleShip.getMaxAmount() > numOfBat) {
                 System.out.print("BattleShip " + (numOfBat + 1) + " (Size 4): ");
                 readCoordinates(tempA, tempB, in);
                 BattleShip s = new BattleShip(tempA, tempB);
-                if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
+                if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
                     numOfBat++;
                     curNumOfShips++;
@@ -88,7 +85,7 @@ public class Main {
                 System.out.print("Submarine " + (numOfSub + 1) + " (Size 3): ");
                 readCoordinates(tempA, tempB, in);
                 Submarine s = new Submarine(tempA, tempB);
-                if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
+                if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
                     numOfSub++;
                     curNumOfShips++;
@@ -99,11 +96,11 @@ public class Main {
                 System.out.print("Patrol boat " + (numOfPat + 1) + " (Size 2): ");
                 readCoordinates(tempA, tempB, in);
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
-                if(PlayerBoard.safetyCheck(tempA,tempB) && s.isValid()) {
+                if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
                     numOfPat++;
                     curNumOfShips++;
-                }else {
+                } else {
                     System.out.println("The specified input is invalid.");
                 }
             } else {
@@ -112,56 +109,157 @@ public class Main {
 
 
         }
-        /**
-         * This will have to change it's place. Those two methods make a board for an AI opponent and then print it
-         * for debugging purpose.
-         */
+        System.out.print("\n");
+        System.out.print("Your Board is: \n");
+        PlayerBoard.drawTheBoard();
+        System.out.print("\n");
 
-        /** while both have ships both have to shoot
-         * how does the borad look like
-         * show map
-         * AI shoot random if it's we make an Array / show shootfield in class Board
-         * scoreboard - if the hole ship is sunk
-         *
-         * Main --> Spielablauf
-         * ScoreBoard--> eigene klasse Singleton
-         * AI Player --> shoot Method
-         * Board--> show right Chars(X, O, PPP)
-         *
+
+        Board enemy = new Board(gridSize);
+        AiPlayer eve = new AiPlayer(enemy);
+
+        /**
+         * This will have to change it's place. Those to methods make a board for an AI opponent and then print it
+         * for debugging purpose.
          */
         //TODO: But this Code Snipped at it's right place.
         eve.fillTheBoard(enemy);
-        System.out.println("Shhh, this is a secret sneak peak to see what your enemy drew ...");
+        System.out.println("\n");
+        System.out.println("The opponent's Board is: ");
         enemy.drawTheBoard();
         System.out.println("\n");
-        PlayerBoard.drawTheBoard();
+
+
+        int NumOfActualShipsPlayer = 10;
+        int NumOfActualShipsAI = 10;
+
+        Location Shot = new Location();
+
+        //while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
+
+        System.out.print("Enter the position you want to attack: ");
+        readCoordiantes(Shot, in);
+
+        //Shoot x = new Shoot(x);
+        System.out.println();
+
+
     }
 
-    /** Method that reads the input and returns the value within the Locations. */
-    public static void readCoordinates(Location a, Location b, Scanner read){
+
+    public static void readCoordiantes(Location x, Scanner read) {
+
         String input = read.nextLine();
 
-        boolean nextLoc = false;
+        String LocShot = "";
 
-        String LocA = "";
-        String LocB = "";
-
-        // separate the two locations
-        while(input.length() > 0) {
-            if(!nextLoc) {
-                if(input.charAt(0) == ' '){
-                    nextLoc = true;
-                } else {
-                    LocA += input.charAt(0);
-                }
+        while (input.length() > 0) {
+            if (input.charAt(0) == ' ') {
+                break;
             } else {
-                LocB += input.charAt(0);
+                LocShot += input.charAt(0);
             }
-            input = input.substring(1);
+            x.update(LocShot);
         }
 
-        a.update(LocA);
-        b.update(LocB);
+        //*while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
+
+        Scanner Shot = new Scanner(System.in);
+        System.out.print("Enter the position you want to attack: ");
+        Location X = new Location();
+
+
     }
 
+
+    /**
+     * Method that reads the input and returns the value within the Locations. haha
+     */
+
+
+        /**
+         * Method that reads the input and returns the value within the Locations.
+         */
+        public static void readCoordinates(Location a, Location b, Scanner read){
+            String input = read.nextLine();
+
+            boolean nextLoc = false;
+
+            String LocA = "";
+            String LocB = "";
+
+            // separate the two locations
+            while (input.length() > 0) {
+                if (!nextLoc) {
+                    if (input.charAt(0) == ' ') {
+                        nextLoc = true;
+                    } else {
+                        LocA += input.charAt(0);
+                    }
+                } else {
+                    LocB += input.charAt(0);
+                }
+                input = input.substring(1);
+            }
+
+            a.update(LocA);
+            b.update(LocB);
+
+        }
+    }
+
+
+           /** if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
+    {
+        if (grid[x][y] == "x") //if computer ship is already there; computer loses ship
+        {
+            System.out.println("Boom! You sunk the ship!");
+            grid[x][y] = "!"; //Hit mark
+            --BattleShips.computerShips;
+        }
+        else if (grid[x][y] == "@") {
+            System.out.println("Oh no, you sunk your own ship :(");
+            grid[x][y] = "x";
+            --BattleShips.playerShips;
+            ++BattleShips.computerShips;
+        }
+        else if (grid[x][y] == " ") {
+            System.out.println("Sorry, you missed");
+            grid[x][y] = "-";
+        }
+    }
+            else if ((x < 0 || x >= numRows) || (y < 0 || y >= numCols))  //invalid guess
+            System.out.println("You can't place ships outside the " + numRows + " by " + numCols + " grid");
+}while((x < 0 || x >= numRows) || (y < 0 || y >= numCols));  //keep re-prompting till valid guess
+        }
+
+<<<<<<< Updated upstream
 }
+           /** if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
+    {
+        if (grid[x][y] == "x") //if computer ship is already there; computer loses ship
+        {
+            System.out.println("Boom! You sunk the ship!");
+            grid[x][y] = "!"; //Hit mark
+            --BattleShips.computerShips;
+        }
+        else if (grid[x][y] == "@") {
+            System.out.println("Oh no, you sunk your own ship :(");
+            grid[x][y] = "x";
+            --BattleShips.playerShips;
+            ++BattleShips.computerShips;
+        }
+        else if (grid[x][y] == " ") {
+            System.out.println("Sorry, you missed");
+            grid[x][y] = "-";
+        }
+    }
+            else if ((x < 0 || x >= numRows) || (y < 0 || y >= numCols))  //invalid guess
+            System.out.println("You can't place ships outside the " + numRows + " by " + numCols + " grid");
+}while((x < 0 || x >= numRows) || (y < 0 || y >= numCols));  //keep re-prompting till valid guess
+        }
+
+=======
+>>>>>>> Stashed changes
+        }
+            */

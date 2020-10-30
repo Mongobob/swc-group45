@@ -1,5 +1,8 @@
 package assignment03;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Board {
 
     private Ship[][] grid;
@@ -8,11 +11,6 @@ class Board {
     public Board(int gridSize){
         grid = new Ship[gridSize][gridSize];
         this.gridSize = gridSize;
-
-        for (int i = 0; i<gridSize;i++){
-            System.out.println(grid.length);
-        }
-
     }
 
     // returns the size of the grid
@@ -27,7 +25,7 @@ class Board {
 
         char[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'};
 
-        System.out.println("Your board is:\n");
+
 
         // printing the header
         System.out.print("   |");
@@ -108,6 +106,14 @@ class Board {
         return true;
 
     }
+    //TODO implement this function
+    public void setShot(){
+
+
+    }
+
+
+
     public void setShip(Ship s) {
         int minRow, minCol, maxRow, maxCol;
         Location a = s.getFirstLocation();
@@ -136,10 +142,14 @@ class Board {
             }
         }
 
+        //* List to save all Locations
+        List<Integer> ShipCoordinatesPlayer = new ArrayList<Integer>();
         // if all the spaces are free we can fill them up now
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
                 grid[i][h] = s;
+                ShipCoordinatesPlayer.add(i,h);
+
             }
         }
     }

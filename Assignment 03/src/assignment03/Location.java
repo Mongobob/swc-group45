@@ -8,8 +8,8 @@ package assignment03;
 
 class Location {
 
-    public int width;
-    public int height;
+    public int width = -1;
+    public int height = -1;
 
     // The constructor method
     public Location(String s){
@@ -23,10 +23,7 @@ class Location {
     }
 
     // Default constructor method for invalid places
-    public Location(){
-        this.width  = -1;
-        this.height = -1;
-    }
+    public Location(){}
 
     // Method to update Location that may be invalid
     public void update(String s){
