@@ -24,7 +24,7 @@ class AiPlayer {
         }
     }
 
-    public void fillTheBoard(Board board){
+    public void fillTheBoard(Board board, Scoreboard scoreboard){
 
         // These are the fake locations to create the ships
         Location fakeLocationA = new Location("0A");
@@ -55,6 +55,7 @@ class AiPlayer {
                 Carrier s = new Carrier(tempA, tempB);
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
+                    scoreboard.increaseScoreboard(1,s);
                     numOfCar++;
                     curNumOfShips++;
                 }
@@ -64,6 +65,7 @@ class AiPlayer {
                 BattleShip s = new BattleShip(tempA, tempB);
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
+                    scoreboard.increaseScoreboard(1,s);
                     numOfBat++;
                     curNumOfShips++;
                 }
@@ -73,6 +75,7 @@ class AiPlayer {
                 Submarine s = new Submarine(tempA, tempB);
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
+                    scoreboard.increaseScoreboard(1,s);
                     numOfSub++;
                     curNumOfShips++;
                 }
@@ -82,6 +85,7 @@ class AiPlayer {
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
+                    scoreboard.increaseScoreboard(1,s);
                     numOfPat++;
                     curNumOfShips++;
                 }

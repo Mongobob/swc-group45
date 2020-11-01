@@ -3,29 +3,29 @@
   <ID>JAVA</ID>
   <OriginalElement>assignment03</OriginalElement>
   <nodes>
-    <node x="0.0" y="258.0">assignment03.BattleShip</node>
+    <node x="885.0" y="258.0">assignment03.BattleShip</node>
     <node x="557.0" y="534.0">assignment03.AiPlayer</node>
-    <node x="249.0" y="534.0">assignment03.Board</node>
+    <node x="0.0" y="534.0">assignment03.Board</node>
     <node x="0.0" y="766.0">assignment03.Main</node>
-    <node x="885.0" y="258.0">assignment03.Carrier</node>
+    <node x="295.0" y="258.0">assignment03.Carrier</node>
     <node x="590.0" y="258.0">assignment03.PatrolBoat</node>
-    <node x="0.0" y="534.0">assignment03.Location</node>
-    <node x="295.0" y="258.0">assignment03.Submarine</node>
+    <node x="308.0" y="534.0">assignment03.Location</node>
+    <node x="0.0" y="258.0">assignment03.Submarine</node>
     <node x="442.5" y="0.0">assignment03.Ship</node>
   </nodes>
   <notes />
   <edges>
     <edge source="assignment03.Carrier" target="assignment03.Ship">
       <point x="0.0" y="-115.5" />
-      <point x="1022.5" y="228.0" />
-      <point x="683.125" y="228.0" />
-      <point x="103.125" y="104.0" />
+      <point x="432.5" y="238.0" />
+      <point x="545.625" y="238.0" />
+      <point x="-34.375" y="104.0" />
     </edge>
     <edge source="assignment03.BattleShip" target="assignment03.Ship">
       <point x="0.0" y="-115.5" />
-      <point x="137.5" y="228.0" />
-      <point x="476.875" y="228.0" />
-      <point x="-103.125" y="104.0" />
+      <point x="1022.5" y="228.0" />
+      <point x="683.125" y="228.0" />
+      <point x="103.125" y="104.0" />
     </edge>
     <edge source="assignment03.PatrolBoat" target="assignment03.Ship">
       <point x="0.0" y="-115.5" />
@@ -35,18 +35,16 @@
     </edge>
     <edge source="assignment03.Submarine" target="assignment03.Ship">
       <point x="0.0" y="-115.5" />
-      <point x="432.5" y="238.0" />
-      <point x="545.625" y="238.0" />
-      <point x="-34.375" y="104.0" />
+      <point x="137.5" y="228.0" />
+      <point x="476.875" y="228.0" />
+      <point x="-103.125" y="104.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="611.7142857142857" y="311.4285714285714" />
-  <SelectedNodes>
-    <node>assignment03.Submarine</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.7440677966101694" x="590.7835990888382" y="565.6036446469247" />
+  <SelectedNodes />
   <Categories>
-    <Category>Methods</Category>
     <Category>Constructors</Category>
+    <Category>Methods</Category>
     <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>

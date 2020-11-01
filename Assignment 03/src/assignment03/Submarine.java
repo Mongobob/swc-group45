@@ -18,7 +18,9 @@ class Submarine implements Ship {
         this.isValid = checkShipSize(a, b);
     }
 
-    public void CoorArray(){
+
+/**
+    public void CoorArray() {
         int minRow, minCol, maxRow, maxCol;
         Location a = this.a;
         Location b = this.b;
@@ -48,10 +50,12 @@ class Submarine implements Ship {
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
                 grid[i][h] = s;
-                ShipCoordinatesPlayer.add(i,h);
+                ShipCoordinatesPlayer.add(i, h);
 
+            }
+        }
     }
-
+**/
     public Location getFirstLocation(){ return a; }
 
     public Location getSecondLocation(){

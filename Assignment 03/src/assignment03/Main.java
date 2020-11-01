@@ -48,7 +48,7 @@ public class Main {
         /**
          * The loop serves to initialize the players board
          */
-
+        Scoreboard scoreboard = Scoreboard.getInstance();
         int curNumOfShips = 0;
         int numOfCar = 0, numOfBat = 0, numOfSub = 0, numOfPat = 0;
 
@@ -65,6 +65,8 @@ public class Main {
                 Carrier s = new Carrier(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
+
                     numOfCar++;
                     curNumOfShips++;
                 } else {
@@ -76,6 +78,7 @@ public class Main {
                 BattleShip s = new BattleShip(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfBat++;
                     curNumOfShips++;
                 } else {
@@ -87,6 +90,7 @@ public class Main {
                 Submarine s = new Submarine(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfSub++;
                     curNumOfShips++;
                 } else {
@@ -98,6 +102,7 @@ public class Main {
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfPat++;
                     curNumOfShips++;
                 } else {
@@ -123,7 +128,7 @@ public class Main {
          * for debugging purpose.
          */
         //TODO: But this Code Snipped at it's right place.
-        eve.fillTheBoard(enemy);
+        eve.fillTheBoard(enemy,scoreboard);
         System.out.println("\n");
         System.out.println("The opponent's Board is: ");
         enemy.drawTheBoard();
