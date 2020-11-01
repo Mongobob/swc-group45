@@ -3,3 +3,6 @@
 - AIPlayer: Schiessen
 - Eventuell(RealPlayer): Schiessen
 - Board: Schussfeld anzeigen (je nach owner)
+
+Josip:
+Implementier Shoot

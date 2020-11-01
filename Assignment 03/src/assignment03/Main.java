@@ -233,7 +233,6 @@ public class Main {
 }while((x < 0 || x >= numRows) || (y < 0 || y >= numCols));  //keep re-prompting till valid guess
         }
 
-<<<<<<< Updated upstream
 }
            /** if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
     {
@@ -259,7 +258,4 @@ public class Main {
 }while((x < 0 || x >= numRows) || (y < 0 || y >= numCols));  //keep re-prompting till valid guess
         }
 
-=======
->>>>>>> Stashed changes
-        }
             */

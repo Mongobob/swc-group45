@@ -5,11 +5,11 @@
   <nodes>
     <node x="885.0" y="258.0">assignment03.BattleShip</node>
     <node x="557.0" y="534.0">assignment03.AiPlayer</node>
-    <node x="249.0" y="534.0">assignment03.Board</node>
+    <node x="0.0" y="534.0">assignment03.Board</node>
     <node x="0.0" y="766.0">assignment03.Main</node>
     <node x="295.0" y="258.0">assignment03.Carrier</node>
     <node x="590.0" y="258.0">assignment03.PatrolBoat</node>
-    <node x="0.0" y="534.0">assignment03.Location</node>
+    <node x="308.0" y="534.0">assignment03.Location</node>
     <node x="0.0" y="258.0">assignment03.Submarine</node>
     <node x="442.5" y="0.0">assignment03.Ship</node>
   </nodes>
@@ -40,10 +40,8 @@
       <point x="-103.125" y="104.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7440677966101694" x="871.0478359908884" y="405.4376556745365" />
-  <SelectedNodes>
-    <node>assignment03.AiPlayer</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.7440677966101694" x="590.7835990888382" y="565.6036446469247" />
+  <SelectedNodes />
   <Categories>
     <Category>Constructors</Category>
     <Category>Methods</Category>
