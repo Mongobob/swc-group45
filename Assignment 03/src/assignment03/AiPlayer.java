@@ -11,11 +11,17 @@ class AiPlayer {
     //TODO: make it more reliable. Maybe even DP to find new valid Locations.
 
     private Board myBoard;
-    private Board myShots; //gonna need this one to register shots
+    private int Shots[][]; //gonna need this one to register shots
     private Random rand = new Random();
 
     public AiPlayer(Board b){
         myBoard = b;
+    }
+
+    private void createShotregister(Board board){
+        for (int i =0;i<board.getGridSize();i++){
+            
+        }
     }
 
     public void fillTheBoard(Board board){
