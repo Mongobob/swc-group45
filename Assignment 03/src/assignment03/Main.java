@@ -43,6 +43,7 @@ public class Main {
 
         // Welcome the player
         System.out.println("Welcome to Battleship!!\n");
+        PlayerBoard.drawTheBoard();
 
 
         /**
@@ -147,6 +148,14 @@ public class Main {
 
         //Shoot x = new Shoot(x);
         System.out.println();
+
+    GameMaster gameMaster=new GameMaster();
+    gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
+
+    while (gameMaster.hasNext()){
+        gameMaster.next();
+    }
+
 
 
     }

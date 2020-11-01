@@ -48,10 +48,14 @@ public class Scoreboard {
         }
     }
 
-    public void getScoreboard(){
+    public void printScoreboard(){
         System.out.print("Your scoreboard: \n");
         System.out.print("  -    Player remaining boats:    numofships \n" + ArrayPlayer.size());
         System.out.print("  -    Enemy boats destroyed:     numofships \n" + (destroyedShips));
+
+    }
+    public int[] getScoreboard(){
+        return new int[] {ArrayAI.size(), ArrayPlayer.size()};
     }
 
 }
