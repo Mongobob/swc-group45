@@ -59,13 +59,15 @@ public class GameMaster implements Iterator {
 
 
     public boolean hasNext() {
+        playerscore=scoreboard.getScoreboard()[1];
+        aiscore=scoreboard.getScoreboard()[0];
         if (playerscore==-1 || aiscore==-1) {
             System.out.println("Scoreboard could not be implemented correctly");
             return false;
-        } else if (aiscore==0) {
+        } else if (aiscore<1) {
             System.out.println("Congratulations, you won!");
             return false;
-        } else if (playerscore==0) {
+        } else if (playerscore<1) {
             System.out.println("Sorry, you lost!");
             return false;
         } else {

@@ -1,7 +1,5 @@
 package assignment03;
 
-//Todo:     -   replace amount of ships in getScoreboard()
-//Todo:     -   Write a way to include amount of ships variables into the class
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +50,11 @@ public class Scoreboard {
         System.out.print("Your scoreboard: \n");
         System.out.print("  -    Player remaining boats: " + ArrayPlayer.size() + "\n");
         System.out.print("  -    Enemy boats destroyed: " + (destroyedShips) + "\n");
-
+        System.out.println(ArrayAI.size() +" " + ArrayPlayer.size());
     }
 
     public int[] getScoreboard(){
+
         return new int[] {ArrayAI.size(), ArrayPlayer.size()};
     }
 
