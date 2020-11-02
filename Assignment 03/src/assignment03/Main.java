@@ -151,7 +151,6 @@ class Main {
         glados.fillTheBoard(AiBoard, scoreboard);
         System.out.println("\nThe opponent's Board is: \n"); // remove this and the following two lines when no longer
         AiBoard.drawTheBoard(); // ... debugging
-        System.out.println("\n");   // ...
 
         GameMaster gameMaster = new GameMaster();
         gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,AiBoard,glados);

@@ -35,6 +35,8 @@ public class GameMaster implements Iterator {
     public Object next(){
 
         // Scoreboard
+        System.out.println("");
+        Scoreboard.getInstance().printScoreboard();
 
         // Player shoots
         enemy.shoot(attackCoordinates());
