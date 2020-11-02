@@ -3,8 +3,8 @@ The game has been implemented.
 - Added the UML Diagram ("assignment03.uml")
 - used "GameMaster" as Iterator which implemented interface "Iterator" (1)
 - used "Scoreboard" as Singleton (2)
-- used "Board" as Observer which implemented "My Observer"
-- used "MilitaryShip" which implemented "MyObservable"
+- used "Board" as Observer which implemented "My Observer" (3)
+- used "MilitaryShip" which implemented "MyObservable" (3)
 
 ###In Detail:
 1.)  We defined the GameMaster Class as an Iterator that would keep
