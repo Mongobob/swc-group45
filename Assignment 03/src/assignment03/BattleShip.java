@@ -4,7 +4,7 @@ class BattleShip implements Ship {
 
     private char shipSymbol = 'B';
     private final int shipLength = 4;
-    private final int maxAmountOfThisType = 0; //2
+    private final int maxAmountOfThisType = 2; //2
     private boolean isValid;
     private int hits = 0;
 

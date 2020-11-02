@@ -1,5 +1,9 @@
+
 /*package assignment03;
 
+
+/**
+package assignment03;
 import java.util.Scanner;
 
 public class Shoot {
@@ -27,6 +31,7 @@ public class Shoot {
 
         //.hitShip(0, 0);
         return;
+
         while (NumberOfCompShips > 0 || NumberOfPlayerShips > 0) {
 
             System.out.println("Enter the position you want to attack");
@@ -34,6 +39,10 @@ public class Shoot {
             Location x = new Location();
 
 
+
+
+            if (ShipCoordPlayer).contains(in){
+                //this field should get "X"
             }
 
 
@@ -67,7 +76,11 @@ public class Shoot {
 
 
     }
+
     }
+
+}
+
 
 
 
@@ -90,4 +103,7 @@ public class Shoot {
         Board ShipCoord = new Board();
         List<Integer> ShipCoordinates = ShipCoord.setShip();
 
+
         return true;*/
+        //return true;
+

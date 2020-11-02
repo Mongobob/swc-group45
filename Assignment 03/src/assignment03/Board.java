@@ -149,7 +149,7 @@ class Board {
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
                 grid[i][h] = s;
-                ShipCoord.add(i);//TODO der richtige Char herausfinden 
+                ShipCoord.add(i);//TODO der richtige Char herausfinden
             }
         }
 

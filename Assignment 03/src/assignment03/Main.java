@@ -43,12 +43,13 @@ public class Main {
 
         // Welcome the player
         System.out.println("Welcome to Battleship!!\n");
+        PlayerBoard.drawTheBoard();
 
 
         /**
          * The loop serves to initialize the players board
          */
-
+        Scoreboard scoreboard = Scoreboard.getInstance();
         int curNumOfShips = 0;
         int numOfCar = 0, numOfBat = 0, numOfSub = 0, numOfPat = 0;
 
@@ -65,6 +66,8 @@ public class Main {
                 Carrier s = new Carrier(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
+
                     numOfCar++;
                     curNumOfShips++;
                 } else {
@@ -76,6 +79,7 @@ public class Main {
                 BattleShip s = new BattleShip(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfBat++;
                     curNumOfShips++;
                 } else {
@@ -87,6 +91,7 @@ public class Main {
                 Submarine s = new Submarine(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfSub++;
                     curNumOfShips++;
                 } else {
@@ -98,6 +103,7 @@ public class Main {
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfPat++;
                     curNumOfShips++;
                 } else {
@@ -124,15 +130,65 @@ public class Main {
          * for debugging purpose.
          */
         //TODO: But this Code Snipped at it's right place.
-        eve.fillTheBoard(enemy);
+        eve.fillTheBoard(enemy,scoreboard);
         System.out.println("\n");
         System.out.println("The opponent's Board is: ");
         enemy.drawTheBoard(true);
         System.out.println("\n");
 
 
+<<<<<<< HEAD
         //Shoot Player = new Shoot();
         //Player.StartOfShooting();
+=======
+        int NumOfActualShipsPlayer = 10;
+        int NumOfActualShipsAI = 10;
+
+        Location Shot = new Location();
+
+        //while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
+
+        System.out.print("Enter the position you want to attack: ");
+        readCoordiantes(Shot, in);
+
+        //Shoot x = new Shoot(x);
+        System.out.println();
+
+    GameMaster gameMaster=new GameMaster();
+    gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
+
+    while (gameMaster.hasNext()){
+        gameMaster.next();
+    }
+
+
+
+    }
+
+
+    public static void readCoordiantes(Location x, Scanner read) {
+
+        String input = read.nextLine();
+
+        String LocShot = "";
+
+        while (input.length() > 0) {
+            if (input.charAt(0) == ' ') {
+                break;
+            } else {
+                LocShot += input.charAt(0);
+            }
+            x.update(LocShot);
+        }
+
+        //*while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
+
+        Scanner Shot = new Scanner(System.in);
+        System.out.print("Enter the position you want to attack: ");
+        Location X = new Location();
+
+
+>>>>>>> 3e5a7e19b26f3912bb589fda92cc26c142ea76a8
     }
 
 

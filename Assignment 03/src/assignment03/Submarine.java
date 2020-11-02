@@ -4,7 +4,7 @@ class Submarine implements Ship {
 
     char shipSymbol = 'S';
     private final int shipLength = 3;
-    private final int maxAmountOfThisType = 0;//3
+    private final int maxAmountOfThisType = 3;//3
     private boolean isValid;
     private int hits = 0;
 
@@ -20,6 +20,44 @@ class Submarine implements Ship {
     }
 
 
+
+/**
+    public void CoorArray() {
+        int minRow, minCol, maxRow, maxCol;
+        Location a = this.a;
+        Location b = this.b;
+
+        // Setup which coordinates need to be checked
+        if (a.width == b.width) {
+            minCol = a.width;
+            maxCol = a.width;
+            if (a.height < b.height) {
+                minRow = a.height;
+                maxRow = b.height;
+            } else {
+                minRow = b.height;
+                maxRow = a.height;
+            }
+        } else {
+            minRow = a.height;
+            maxRow = a.height;
+            if (a.width < b.width) {
+                minCol = a.width;
+                maxCol = b.width;
+            } else {
+                minCol = b.width;
+                maxCol = a.width;
+            }
+        }
+        for (int i = minCol; i <= maxCol; i++) {
+            for (int h = minRow; h <= maxRow; h++) {
+                grid[i][h] = s;
+                ShipCoordinatesPlayer.add(i, h);
+
+            }
+        }
+    }
+**/
     public Location getFirstLocation(){ return a; }
 
     public Location getSecondLocation(){

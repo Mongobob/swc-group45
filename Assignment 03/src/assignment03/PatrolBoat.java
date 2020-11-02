@@ -4,7 +4,7 @@ class PatrolBoat implements Ship {
 
     char shipSymbol = 'P';
     private final int shipLength = 2;
-    private final int maxAmountOfThisType = 0; //4
+    private final int maxAmountOfThisType = 4; //4
     private boolean isValid;
     private int hits = 0;
 
