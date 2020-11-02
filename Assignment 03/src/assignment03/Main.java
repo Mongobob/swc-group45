@@ -33,6 +33,7 @@ class Main {
                 + fakePatrolBoat.getMaxAmount();
         int gridSize = 10;
         Board PlayerBoard = new Board(gridSize, true);
+        Board AiBoard = new Board(gridSize, false);
 
         // Getting the Scanner up and running
         Scanner in = new Scanner(System.in);
@@ -43,25 +44,17 @@ class Main {
 
         // Welcome the player
         System.out.println("Welcome to Battleship!!\n");
-        //PlayerBoard.drawTheBoard();
-
-        Location x = new Location(0,0);
-        Location y = new Location(0,5);
-
-        Ship tester = new Carrier(x,y);
-
-        System.out.println("" + tester.getShipType());
 
         /**
          * The loop serves to initialize the players board
          */
-        //Scoreboard scoreboard = Scoreboard.getInstance();
+        Scoreboard scoreboard = Scoreboard.getInstance();
         int curNumOfShips = 0;
         int numOfCar = 0, numOfBat = 0, numOfSub = 0, numOfPat = 0;
 
         while (totalNumOfShips > curNumOfShips) {
 
-            //PlayerBoard.drawTheBoard();
+            PlayerBoard.drawTheBoard();
 
             // There is an other ship to be placed
             System.out.print("Please enter the position of your ");
@@ -123,28 +116,66 @@ class Main {
 
 
         }
+
+        /* no longer needed print outs for debugging
         System.out.print("\n");
         System.out.print("Your Board is: \n");
-        PlayerBoard.hitShip(0,0);
-        //PlayerBoard.drawTheBoard(false);
-        System.out.print("\n");
-
-
-        Board enemy = new Board(gridSize, false);
-        AiPlayer eve = new AiPlayer(enemy);
+        PlayerBoard.shoot(new Location(0,0));
+        PlayerBoard.drawTheBoard();
+        System.out.print("\n"); */
 
         /**
          * This will have to change it's place. Those to methods make a board for an AI opponent and then print it
          * for debugging purpose.
          */
-        //TODO: But this Code Snipped at it's right place.
-        //eve.fillTheBoard(enemy,scoreboard);
+        AiPlayer Glados = new AiPlayer(AiBoard); // If you get that Portal 2 reference you are a legend
+        Glados.fillTheBoard(AiBoard, scoreboard);
         System.out.println("\n");
-        System.out.println("The opponent's Board is: ");
-        //enemy.drawTheBoard(true);
-        System.out.println("\n");
+        System.out.println("The opponent's Board is: "); // remove this and the following two lines when no longer
+        AiBoard.drawTheBoard(); // ... debugging
+        System.out.println("\n");   // ...
 
+        GameMaster gameMaster = new GameMaster();
+        //gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
 
+        while (gameMaster.hasNext()) {
+            gameMaster.next();
+        }
+
+    }
+
+    /**
+     * Method that reads the input and returns the value within the given Location Objects.
+     */
+    public static void readCoordinates(Location a, Location b, Scanner read) {
+        String input = read.nextLine();
+
+        boolean nextLoc = false;
+
+        String LocA = "";
+        String LocB = "";
+
+        // separate the two locations
+        while (input.length() > 0) {
+            if (!nextLoc) {
+                if (input.charAt(0) == ' ') {
+                    nextLoc = true;
+                } else {
+                    LocA += input.charAt(0);
+                }
+            } else {
+                LocB += input.charAt(0);
+            }
+            input = input.substring(1);
+        }
+
+        a.update(LocA);
+        b.update(LocB);
+
+    }
+
+}
+        /* the following lines are redundant thanks to the GameMaster Class
 //<<<<<<< HEAD
         //Shoot Player = new Shoot();
         //Player.StartOfShooting();
@@ -154,27 +185,22 @@ class Main {
 
         Location Shot = new Location();
 
-        //while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
+        while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
 
         System.out.print("Enter the position you want to attack: ");
-        readCoordiantes(Shot, in);
+        readCoordinates(Shot, in);
 
         //Shoot x = new Shoot(x);
         System.out.println();
 
-    GameMaster gameMaster=new GameMaster();
-    //gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
 
-    while (gameMaster.hasNext()){
-        gameMaster.next();
-    }
 
 
 
     }
 
 
-    public static void readCoordiantes(Location x, Scanner read) {
+    public static void readCoordinates(Location x, Scanner read) {
 
         String input = read.nextLine();
 
@@ -197,47 +223,9 @@ class Main {
 
 
 //>>>>>>> 3e5a7e19b26f3912bb589fda92cc26c142ea76a8
-    }
+    }*/
 
-
-    /**
-     * Method that reads the input and returns the value within the Locations. haha
-     */
-
-
-        /**
-         * Method that reads the input and returns the value within the Locations.
-         */
-        public static void readCoordinates(Location a, Location b, Scanner read){
-            String input = read.nextLine();
-
-            boolean nextLoc = false;
-
-            String LocA = "";
-            String LocB = "";
-
-            // separate the two locations
-            while (input.length() > 0) {
-                if (!nextLoc) {
-                    if (input.charAt(0) == ' ') {
-                        nextLoc = true;
-                    } else {
-                        LocA += input.charAt(0);
-                    }
-                } else {
-                    LocB += input.charAt(0);
-                }
-                input = input.substring(1);
-            }
-
-            a.update(LocA);
-            b.update(LocB);
-
-        }
-    }
-
-
-           /** if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
+           /* if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
     {
         if (grid[x][y] == "x") //if computer ship is already there; computer loses ship
         {

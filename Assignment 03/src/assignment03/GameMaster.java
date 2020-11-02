@@ -18,15 +18,16 @@ public class GameMaster implements Iterator {
     Board enemy;
 
 
-    public void get_stuff_iterator(Scoreboard scoreboard,Board player, Board enemyshot){
+    public void get_stuff_iterator(Scoreboard scoreboard, Board player, Board enemyShot){
         int[] score=scoreboard.getScoreboard();
         this.playerscore= score[1];
         this.aiscore = score[0];
         this.scoreboard=scoreboard;
         this.player=player;
-        this.enemy=enemyshot;
+        this.enemy=enemyShot;
 
     }
+
     public Object next(){return "True";}
 
        // scoreboard.printScoreboard();

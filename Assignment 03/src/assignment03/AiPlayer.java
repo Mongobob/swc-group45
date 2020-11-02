@@ -8,21 +8,20 @@ class AiPlayer {
 
     //TODO: make this class look better and more understandable
 
-    //TODO: make it more reliable. Maybe even DP to find new valid Locations.
-
     private Board myBoard;
-    private int Shots[][]; //gonna need this one to register shots
+    // private int Shots[][]; //gonna need this one to register shots ... not really ... well not anymore
     private Random rand = new Random();
 
     public AiPlayer(Board b){
         myBoard = b;
     }
 
+    /* Can be used when we want to make the AI smarter.
     private void createShotregister(Board board){
         for (int i =0;i<board.getGridSize();i++){
             
         }
-    }
+    }*/
 
     public void fillTheBoard(Board board, Scoreboard scoreboard){
 
@@ -140,10 +139,5 @@ class AiPlayer {
         return new Location(x,y);
 
     }
-    //public void shoot() {
 
-
-
-
-    //}
 }
