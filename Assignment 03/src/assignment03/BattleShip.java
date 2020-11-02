@@ -2,10 +2,11 @@ package assignment03;
 
 class BattleShip implements Ship {
 
-    private final char shipSymbol = 'B';
+    private char shipSymbol = 'B';
     private final int shipLength = 4;
-    private final int maxAmountOfThisType = 2;
+    private final int maxAmountOfThisType = 0; //2
     private boolean isValid;
+    private int hits = 0;
 
     private String shipType = "BattleShip";
 
@@ -35,6 +36,12 @@ class BattleShip implements Ship {
     public int getMaxAmount() { return maxAmountOfThisType; }
 
     public char getShipSymbol() { return shipSymbol; }
+
+    public int getHits(){return hits;}
+
+    public void setShipSymbol(char c){
+        shipSymbol = c;
+    }
 
     public boolean checkShipSize(Location a, Location b) {
 

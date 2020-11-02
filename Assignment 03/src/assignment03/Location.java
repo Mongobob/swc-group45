@@ -22,6 +22,8 @@ class Location {
         this.height = h;
     }
 
+
+
     // Default constructor method for invalid places
     public Location(){}
 
@@ -88,4 +90,6 @@ class Location {
             this.width = -1 ;
         }
     }
+
+
 }

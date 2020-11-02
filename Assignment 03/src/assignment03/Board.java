@@ -1,17 +1,18 @@
 package assignment03;
 
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.List;
 
 class Board {
 
     private Ship[][] grid;
     private int gridSize;
 
-    public Board(int gridSize){
+    public Board(int gridSize) {
         grid = new Ship[gridSize][gridSize];
         this.gridSize = gridSize;
     }
+
 
     // returns the size of the grid
     public int getGridSize() {
@@ -21,10 +22,9 @@ class Board {
     /**
      * Method that draws the board at the end.
      */
-    public void drawTheBoard() {
+    public void drawTheBoard(boolean enemy) {
 
         char[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'};
-
 
 
         // printing the header
@@ -45,9 +45,16 @@ class Board {
             System.out.print("[" + h + "]|");
             for (int i = 0; i < grid.length; i++) {
                 System.out.print("[");
-                if (grid[i][h]!= null) {
-                    System.out.print("" + grid[i][h].getShipSymbol() + "");
-                } else {
+                if (grid[i][h] != null){
+                    if(!enemy || (enemy && (grid[i][h].getShipSymbol()=='X') || (enemy &&grid[i][h].getShipSymbol()=='O')
+                              || (enemy && grid[i][h].getHits() == grid[i][h].getShipLength()))){
+                        System.out.print("" + grid[i][h].getShipSymbol() + "");
+                    }
+                    else{
+                        System.out.print(" ");
+                    }
+                }
+                else {
                     System.out.print(" ");
                 }
                 System.out.print("]");
@@ -106,12 +113,6 @@ class Board {
         return true;
 
     }
-    //TODO implement this function
-    public void setShot(){
-
-
-    }
-
 
 
     public void setShip(Ship s) {
@@ -142,15 +143,20 @@ class Board {
             }
         }
 
-        //* List to save all Locations
-        List<Integer> ShipCoordinatesPlayer = new ArrayList<Integer>();
+
+        ArrayList<Character> ShipCoord = new ArrayList<Character>();
         // if all the spaces are free we can fill them up now
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
                 grid[i][h] = s;
-                ShipCoordinatesPlayer.add(i,h);
-
+                ShipCoord.add(i);//TODO der richtige Char herausfinden 
             }
         }
+
     }
+    // turn the ShipSymbol into X if we hit
+    public void hitShip(int a, int b){
+        grid[a][b].setShipSymbol('X');
+    }
+
 }

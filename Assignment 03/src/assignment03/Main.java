@@ -111,7 +111,8 @@ public class Main {
         }
         System.out.print("\n");
         System.out.print("Your Board is: \n");
-        PlayerBoard.drawTheBoard();
+        PlayerBoard.hitShip(0,0);
+        PlayerBoard.drawTheBoard(false);
         System.out.print("\n");
 
 
@@ -126,49 +127,12 @@ public class Main {
         eve.fillTheBoard(enemy);
         System.out.println("\n");
         System.out.println("The opponent's Board is: ");
-        enemy.drawTheBoard();
+        enemy.drawTheBoard(true);
         System.out.println("\n");
 
 
-        int NumOfActualShipsPlayer = 10;
-        int NumOfActualShipsAI = 10;
-
-        Location Shot = new Location();
-
-        //while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
-
-        System.out.print("Enter the position you want to attack: ");
-        readCoordiantes(Shot, in);
-
-        //Shoot x = new Shoot(x);
-        System.out.println();
-
-
-    }
-
-
-    public static void readCoordiantes(Location x, Scanner read) {
-
-        String input = read.nextLine();
-
-        String LocShot = "";
-
-        while (input.length() > 0) {
-            if (input.charAt(0) == ' ') {
-                break;
-            } else {
-                LocShot += input.charAt(0);
-            }
-            x.update(LocShot);
-        }
-
-        //*while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
-
-        Scanner Shot = new Scanner(System.in);
-        System.out.print("Enter the position you want to attack: ");
-        Location X = new Location();
-
-
+        //Shoot Player = new Shoot();
+        //Player.StartOfShooting();
     }
 
 

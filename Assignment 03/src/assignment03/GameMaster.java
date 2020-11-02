@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 // I will be using this as Iterator
-public class GameMaster {
-    PlayerItem[] pitems;
-    AIItem[] aitems;
+//public class GameMaster {
+  //  PlayerItem[] pitems;
+    //AIItem[] aitems;
 
-    public Object next(){
+    //public Object next(){
 
         //Show Scoreboard
         //AI-Player shoots
@@ -17,14 +17,14 @@ public class GameMaster {
         //Show opponent's board
 
 
-    }
+    //}
 
-    public boolean hasNext() {
-        if (totalNumOfShips > curNumOfShips) {
-            return true;
-        } else {
-            return false;
+    //public boolean hasNext() {
+      //  if (totalNumOfShips > curNumOfShips) {
+        //    return true;
+       // } else {
+         //   return false;
 
-        }
-    }
-}
+        //}
+    //}
+//}

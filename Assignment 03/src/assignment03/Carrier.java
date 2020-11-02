@@ -2,10 +2,11 @@ package assignment03;
 
 class Carrier implements Ship {
 
-    private final char shipSymbol = 'C';
+    char shipSymbol = 'C';
     private final int shipLength = 6;
     private final int maxAmountOfThisType = 1;
     private boolean isValid;
+    private int hits = 0;
 
     private String shipType = "Carrier";
 
@@ -35,6 +36,13 @@ class Carrier implements Ship {
     public int getMaxAmount() { return maxAmountOfThisType; }
 
     public char getShipSymbol() { return shipSymbol; }
+
+    public int getHits(){return hits;}
+
+    public void setShipSymbol(char c){
+        shipSymbol = c;
+    }
+
 
     public boolean checkShipSize(Location a, Location b) {
 
