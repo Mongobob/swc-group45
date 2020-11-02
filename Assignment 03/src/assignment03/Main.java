@@ -2,9 +2,6 @@ package assignment03;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 class Main {
@@ -192,84 +189,3 @@ class Main {
     }
 
 }
-        /* the following lines are redundant thanks to the GameMaster Class
-//<<<<<<< HEAD
-        //Shoot Player = new Shoot();
-        //Player.StartOfShooting();
-//=======
-        int NumOfActualShipsPlayer = 10;
-        int NumOfActualShipsAI = 10;
-
-        Location Shot = new Location();
-
-        while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
-
-        System.out.print("Enter the position you want to attack: ");
-        readCoordinates(Shot, in);
-
-        //Shoot x = new Shoot(x);
-        System.out.println();
-
-
-
-
-
-    }
-
-
-
-
-
-//>>>>>>> 3e5a7e19b26f3912bb589fda92cc26c142ea76a8
-    }*/
-
-           /* if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
-    {
-        if (grid[x][y] == "x") //if computer ship is already there; computer loses ship
-        {
-            System.out.println("Boom! You sunk the ship!");
-            grid[x][y] = "!"; //Hit mark
-            --BattleShips.computerShips;
-        }
-        else if (grid[x][y] == "@") {
-            System.out.println("Oh no, you sunk your own ship :(");
-            grid[x][y] = "x";
-            --BattleShips.playerShips;
-            ++BattleShips.computerShips;
-        }
-        else if (grid[x][y] == " ") {
-            System.out.println("Sorry, you missed");
-            grid[x][y] = "-";
-        }
-    }
-            else if ((x < 0 || x >= numRows) || (y < 0 || y >= numCols))  //invalid guess
-            System.out.println("You can't place ships outside the " + numRows + " by " + numCols + " grid");
-}while((x < 0 || x >= numRows) || (y < 0 || y >= numCols));  //keep re-prompting till valid guess
-        }
-
-}
-           /** if ((x >= 0 && x < numRows) && (y >= 0 && y < numCols)) //valid guess
-    {
-        if (grid[x][y] == "x") //if computer ship is already there; computer loses ship
-        {
-            System.out.println("Boom! You sunk the ship!");
-            grid[x][y] = "!"; //Hit mark
-            --BattleShips.computerShips;
-        }
-        else if (grid[x][y] == "@") {
-            System.out.println("Oh no, you sunk your own ship :(");
-            grid[x][y] = "x";
-            --BattleShips.playerShips;
-            ++BattleShips.computerShips;
-        }
-        else if (grid[x][y] == " ") {
-            System.out.println("Sorry, you missed");
-            grid[x][y] = "-";
-        }
-    }
-            else if ((x < 0 || x >= numRows) || (y < 0 || y >= numCols))  //invalid guess
-            System.out.println("You can't place ships outside the " + numRows + " by " + numCols + " grid");
-}while((x < 0 || x >= numRows) || (y < 0 || y >= numCols));  //keep re-prompting till valid guess
-        }
-
-            */
