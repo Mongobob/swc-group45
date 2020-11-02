@@ -50,7 +50,6 @@ public class Scoreboard {
         System.out.print("Your scoreboard: \n");
         System.out.print("  -    Player remaining boats: " + ArrayPlayer.size() + "\n");
         System.out.print("  -    Enemy boats destroyed: " + (destroyedShips) + "\n");
-        System.out.println(ArrayAI.size() +" " + ArrayPlayer.size());
     }
 
     public int[] getScoreboard(){
