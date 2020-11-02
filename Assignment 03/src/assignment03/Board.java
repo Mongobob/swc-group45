@@ -166,16 +166,58 @@ class Board implements MyObserver{
      * The Observable is a ship in all the cases.
      */
     public void update(Ship s, Location c, int index, boolean wasDestroyed) {
-        if(isForPlayer) {
-            visualBoard[c.width][c.height] = s.getShipSymbolAt(index);
-        } else {
-            if(wasDestroyed) {
-                visualBoard[c.width][c.height] = s.getShipSymbol();
+        if(wasDestroyed){
+
+            if(isForPlayer){
+                // On PlayerBoard when ship was destroyed.
+                visualBoard[c.width][c.height] = grid[c.width][c.height].getShipSymbolAt(index);
+                Scoreboard.getInstance().decreaseScoreboard(0,s);
+                System.out.println("Your " + s.toString() + "was destroyed");
             } else {
-                visualBoard[c.width][c.height] = s.getShipSymbolAt(index);
+                // On AiBoard when a ship was destroyed.
+                Location a = s.getFirstLocation();
+                Location b = s.getSecondLocation();
+                int minRow, minCol, maxRow, maxCol;
+
+                // Setup which coordinates need to be checked
+                if (a.width == b.width) {
+                    minCol = a.width;
+                    maxCol = a.width;
+                    if (a.height < b.height) {
+                        minRow = a.height;
+                        maxRow = b.height;
+                    } else {
+                        minRow = b.height;
+                        maxRow = a.height;
+                    }
+                } else {
+                    minRow = a.height;
+                    maxRow = a.height;
+                    if (a.width < b.width) {
+                        minCol = a.width;
+                        maxCol = b.width;
+                    } else {
+                        minCol = b.width;
+                        maxCol = a.width;
+                    }
+                }
+                index = 0;
+                for (int i = minCol; i <= maxCol; i++) {
+                    for (int h = minRow; h <= maxRow; h++) {
+                        visualBoard[i][h] = grid[i][h].getShipSymbol();
+                    }
+                }
+                Scoreboard.getInstance().decreaseScoreboard(1,s);
+                System.out.print("You destroyed a " + s.toString() + "\n");
+            }
+        } else {
+            visualBoard[c.width][c.height] = s.getShipSymbolAt(index);
+            if(isForPlayer){
+                System.out.println("Your boat was hit!");
+            } else {
+                System.out.print("You hit a boat!\n");
             }
         }
-
     }
 
     /**
@@ -185,6 +227,11 @@ class Board implements MyObserver{
     public void shoot(Location a){
         if(grid[a.width][a.height] == null){
             visualBoard[a.width][a.height] = 'O';
+            if(isForPlayer){
+                System.out.println("The computer missed!");
+            } else {
+                System.out.print("Miss\n");
+            }
         } else if (grid[a.width][a.height] instanceof Target){ // This is a bit advanced. Needs checking if it worked.
             Target q = (Target) grid[a.width][a.height];
             q.hit(a);

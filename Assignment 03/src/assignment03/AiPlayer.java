@@ -55,6 +55,7 @@ class AiPlayer {
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
                     scoreboard.increaseScoreboard(1,s);
+                    s.registerObserver(myBoard);
                     numOfCar++;
                     curNumOfShips++;
                 }
@@ -65,6 +66,7 @@ class AiPlayer {
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
                     scoreboard.increaseScoreboard(1,s);
+                    s.registerObserver(myBoard);
                     numOfBat++;
                     curNumOfShips++;
                 }
@@ -75,6 +77,7 @@ class AiPlayer {
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
                     scoreboard.increaseScoreboard(1,s);
+                    s.registerObserver(myBoard);
                     numOfSub++;
                     curNumOfShips++;
                 }
@@ -85,6 +88,7 @@ class AiPlayer {
                 if(myBoard.safetyCheck(tempA,tempB) && s.isValid()) {
                     myBoard.setShip(s);
                     scoreboard.increaseScoreboard(1,s);
+                    s.registerObserver(myBoard);
                     numOfPat++;
                     curNumOfShips++;
                 }
@@ -129,7 +133,7 @@ class AiPlayer {
 
     }
 
-    private Location getRandLoc(Board b) {
+    public Location getRandLoc(Board b) {
 
         int gridSize = b.getGridSize();
 

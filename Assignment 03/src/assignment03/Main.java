@@ -1,5 +1,7 @@
 package assignment03;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,16 @@ class Main {
         Board AiBoard = new Board(gridSize, false);
 
         // Getting the Scanner up and running
-        Scanner in = new Scanner(System.in);
+        //Scanner in = new Scanner(System.in);
+
+        // This is an experimental test scanner. Pls delete when no longer debugging.
+        Scanner in;
+        try {
+            in = new Scanner(new File("D:\\GitHub\\swc-group45\\swc-group45\\Assignment 03\\src\\assignment03\\TestInputs"));
+        } catch (FileNotFoundException e) {
+            System.out.println("Could find TestInputs.txt");
+            in = new Scanner(System.in);
+        }
 
         /**
          * Here is were the preparation stops and the game begins.
@@ -54,7 +65,7 @@ class Main {
 
         while (totalNumOfShips > curNumOfShips) {
 
-            PlayerBoard.drawTheBoard();
+            //PlayerBoard.drawTheBoard();
 
             // There is an other ship to be placed
             System.out.print("Please enter the position of your ");
@@ -67,7 +78,9 @@ class Main {
                 Carrier s = new Carrier(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    //scoreboard.increaseScoreboard(0,s);
+                    s.registerObserver(PlayerBoard);
+                    //s.registerObserver(AiBoard);
+                    scoreboard.increaseScoreboard(0,s);
 
                     numOfCar++;
                     curNumOfShips++;
@@ -80,7 +93,8 @@ class Main {
                 BattleShip s = new BattleShip(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    //scoreboard.increaseScoreboard(0,s);
+                    s.registerObserver(PlayerBoard);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfBat++;
                     curNumOfShips++;
                 } else {
@@ -92,7 +106,8 @@ class Main {
                 Submarine s = new Submarine(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    //scoreboard.increaseScoreboard(0,s);
+                    s.registerObserver(PlayerBoard);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfSub++;
                     curNumOfShips++;
                 } else {
@@ -104,7 +119,8 @@ class Main {
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    //scoreboard.increaseScoreboard(0,s);
+                    s.registerObserver(PlayerBoard);
+                    scoreboard.increaseScoreboard(0,s);
                     numOfPat++;
                     curNumOfShips++;
                 } else {
@@ -124,19 +140,21 @@ class Main {
         PlayerBoard.drawTheBoard();
         System.out.print("\n"); */
 
+        System.out.print("Your Board is: \n");
+        PlayerBoard.drawTheBoard();
+
         /**
          * This will have to change it's place. Those to methods make a board for an AI opponent and then print it
          * for debugging purpose.
          */
-        AiPlayer Glados = new AiPlayer(AiBoard); // If you get that Portal 2 reference you are a legend
-        Glados.fillTheBoard(AiBoard, scoreboard);
-        System.out.println("\n");
-        System.out.println("The opponent's Board is: "); // remove this and the following two lines when no longer
+        AiPlayer glados = new AiPlayer(AiBoard); // If you get that Portal 2 reference you are a legend
+        glados.fillTheBoard(AiBoard, scoreboard);
+        System.out.println("\nThe opponent's Board is: \n"); // remove this and the following two lines when no longer
         AiBoard.drawTheBoard(); // ... debugging
         System.out.println("\n");   // ...
 
         GameMaster gameMaster = new GameMaster();
-        //gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
+        gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,AiBoard,glados);
 
         while (gameMaster.hasNext()) {
             gameMaster.next();
@@ -200,26 +218,7 @@ class Main {
     }
 
 
-    public static void readCoordinates(Location x, Scanner read) {
 
-        String input = read.nextLine();
-
-        String LocShot = "";
-
-        while (input.length() > 0) {
-            if (input.charAt(0) == ' ') {
-                break;
-            } else {
-                LocShot += input.charAt(0);
-            }
-            x.update(LocShot);
-        }
-
-        //*while (NumOfActualShipsPlayer > 0 && NumOfActualShipsAI > 0) {
-
-        Scanner Shot = new Scanner(System.in);
-        System.out.print("Enter the position you want to attack: ");
-        Location X = new Location();
 
 
 //>>>>>>> 3e5a7e19b26f3912bb589fda92cc26c142ea76a8

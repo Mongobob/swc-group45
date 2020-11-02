@@ -11,10 +11,18 @@ class Submarine extends MilitaryShip {
      * - shipType = "Carrier";
      */
 
+    private int shipID = 0;
+    private int myShipID;
+
     public Submarine(Location a, Location b){
         super('S', 3, 3, a, b, "Carrier");
+        myShipID = ++shipID;
     }
 
+    @Override
+    public String toString() {
+        return (super.toString() + myShipID);
+    }
     /**
      * Original Code is still here in Case I messed up.
      * De-Comment the code below and delete the part above

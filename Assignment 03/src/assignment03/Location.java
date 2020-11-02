@@ -22,8 +22,6 @@ class Location {
         this.height = h;
     }
 
-
-
     // Default constructor method for invalid places
     public Location(){}
 
@@ -91,5 +89,28 @@ class Location {
         }
     }
 
+    /**
+     * (New) Due to console output challenges.
+     */
+    public String toString(){
+
+        String w = "";
+
+        switch (this.width) {
+            case 0 -> w += 'A';
+            case 1 -> w += 'B';
+            case 2 -> w += 'C';
+            case 3 -> w += 'D';
+            case 4 -> w += 'E';
+            case 5 -> w += 'F';
+            case 6 -> w += 'G';
+            case 7 -> w += 'H';
+            case 8 -> w += 'I';
+            case 9 -> w += 'J';
+            default -> w += 'Z'; // if not => invalid location
+        }
+
+        return (w + this.height);
+    }
 
 }

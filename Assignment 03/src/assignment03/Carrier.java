@@ -11,8 +11,17 @@ class Carrier extends MilitaryShip {
      * - shipType = "Carrier";
      */
 
+    private int shipID = 0;
+    private int myShipID;
+
     public Carrier(Location a, Location b){
         super('C', 6, 1, a, b, "Carrier");
+        myShipID = ++shipID;
+    }
+
+    @Override
+    public String toString() {
+        return (super.toString() + myShipID);
     }
 
     /**

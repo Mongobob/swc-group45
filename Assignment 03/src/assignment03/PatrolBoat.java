@@ -11,8 +11,16 @@ class PatrolBoat extends MilitaryShip {
      * - shipType = "PatrolBoat";
      */
 
+    private int shipID = 0;
+    private int myShipID;
+
     public PatrolBoat(Location a, Location b){
-        super('P', 2, 4, a, b, "PatrolBoat");
+        super('P', 2, 4, a, b, "PatrolBoat");myShipID = ++shipID;
+    }
+
+    @Override
+    public String toString() {
+        return (super.toString() + myShipID);
     }
 
     /**

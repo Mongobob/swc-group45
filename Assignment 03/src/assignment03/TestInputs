@@ -1,0 +1,14 @@
+E9 J9
+A2 A5
+G0 J0
+D0 D2
+F2 H2
+J5 J7
+A0 B0
+A7 B7
+F5 F6
+J2 J3
+
+// These are all the inputs from Assignment 2. We are using
+// this .txt file in order to debug the code faster by making
+// the Scanner read the inputs automatically.

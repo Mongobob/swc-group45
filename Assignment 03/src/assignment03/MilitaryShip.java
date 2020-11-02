@@ -12,7 +12,7 @@ public class MilitaryShip implements Ship, MyObservable, Target {
     private char[] shipSymbolAt;
 
     private String shipType;
-    private ArrayList<MyObserver> myObservers; // new
+    private ArrayList<MyObserver> myObservers = new ArrayList<MyObserver>(); // new
 
     private Location a;
     private Location b;
@@ -89,10 +89,10 @@ public class MilitaryShip implements Ship, MyObservable, Target {
         }
 
         shipSymbolAt[index] = 'X';
-        notifyObserver(c, index, false);
 
         // Check if destroyed
         boolean wasDestroyed = true;
+
         for(int i = 0; i < shipSymbolAt.length; i++) {
             if (shipSymbolAt[i] != 'X'){
                 wasDestroyed = false;
@@ -100,50 +100,7 @@ public class MilitaryShip implements Ship, MyObservable, Target {
             }
         }
 
-        // if it was destroyed indeed ...
-        if(wasDestroyed){
-            destroyed();
-        }
-    }
-
-    /**
-     * This method is only used when the last free space of the ship was hit
-     * and now it sank.
-     */
-    public void destroyed(){
-        int minRow, minCol, maxRow, maxCol;
-
-        // Setup which coordinates need to be checked
-        if (a.width == b.width) {
-            minCol = a.width;
-            maxCol = a.width;
-            if (a.height < b.height) {
-                minRow = a.height;
-                maxRow = b.height;
-            } else {
-                minRow = b.height;
-                maxRow = a.height;
-            }
-        } else {
-            minRow = a.height;
-            maxRow = a.height;
-            if (a.width < b.width) {
-                minCol = a.width;
-                maxCol = b.width;
-            } else {
-                minCol = b.width;
-                maxCol = a.width;
-            }
-        }
-
-        // now we need to update for each square of the ship
-        int index = 0;
-        for (int i = minCol; i <= maxCol; i++) {
-            for (int h = minRow; h <= maxRow; h++) {
-                notifyObserver(new Location(i, h), index, true);
-                index++;
-            }
-        }
+        notifyObserver(c, index, wasDestroyed);
     }
 
     public Location getFirstLocation(){
@@ -158,7 +115,7 @@ public class MilitaryShip implements Ship, MyObservable, Target {
 
     public boolean isValid() { return isValid; }
 
-    public String getShipType() {
+    public String toString() {
         return shipType;
     }
 
