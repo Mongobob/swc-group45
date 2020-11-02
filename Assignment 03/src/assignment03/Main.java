@@ -35,16 +35,16 @@ class Main {
         Board AiBoard = new Board(gridSize, false);
 
         // Getting the Scanner up and running
-        //Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         // This is an experimental test scanner. Pls delete when no longer debugging.
-        Scanner in;
+        /*Scanner in;
         try {
             in = new Scanner(new File("C:\\Users\\sandr\\OneDrive\\Dokumente\\Universität Zürich\\Aufbaustufe\\2020 HS\\Software Construction\\assignments\\swc-group45\\Assignment 03\\src\\assignment03\\TestInputs"));
         } catch (FileNotFoundException e) {
             System.out.println("Could find TestInputs.txt");
             in = new Scanner(System.in);
-        }
+        }*/
 
         /**
          * Here is were the preparation stops and the game begins.
@@ -70,7 +70,7 @@ class Main {
             Location tempB = new Location();
 
             if (fakeCarrier.getMaxAmount() > numOfCar) {
-                System.out.print("Carrier " + (numOfCar + 1) + " (Size 6): ");
+                System.out.print("Carrier " + (numOfCar + 1) + " : ");
                 readCoordinates(tempA, tempB, in);
                 Carrier s = new Carrier(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
@@ -85,7 +85,7 @@ class Main {
                     System.out.println("The specified input is invalid.");
                 }
             } else if (fakeBattleShip.getMaxAmount() > numOfBat) {
-                System.out.print("BattleShip " + (numOfBat + 1) + " (Size 4): ");
+                System.out.print("BattleShip " + (numOfBat + 1) + " : ");
                 readCoordinates(tempA, tempB, in);
                 BattleShip s = new BattleShip(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
@@ -98,7 +98,7 @@ class Main {
                     System.out.println("The specified input is invalid.");
                 }
             } else if (fakeSubmarine.getMaxAmount() > numOfSub) {
-                System.out.print("Submarine " + (numOfSub + 1) + " (Size 3): ");
+                System.out.print("Submarine " + (numOfSub + 1) + " : ");
                 readCoordinates(tempA, tempB, in);
                 Submarine s = new Submarine(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
@@ -111,7 +111,7 @@ class Main {
                     System.out.println("The specified input is invalid.");
                 }
             } else if (fakePatrolBoat.getMaxAmount() > numOfPat) {
-                System.out.print("Patrol boat " + (numOfPat + 1) + " (Size 2): ");
+                System.out.print("Patrol boat " + (numOfPat + 1) + " : ");
                 readCoordinates(tempA, tempB, in);
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
