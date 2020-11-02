@@ -4,6 +4,6 @@ public interface MyObservable {
 
     void registerObserver(MyObserver o);
     void removeObserver(MyObserver o);
-    void notifyObserver(int i);
+    void notifyObserver(Location a, int i, boolean wasDestroyed);
 
 }

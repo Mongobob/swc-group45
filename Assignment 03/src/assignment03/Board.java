@@ -155,47 +155,25 @@ class Board implements MyObserver{
 
     }
 
+    /* outdated code due to overhaul of classes and interfaces
     // turn the ShipSymbol into X if we hit
     public void hitShip(int a, int b){
         grid[a][b].setShipSymbol('X');
-    }
+    } */
 
     /**
      * This is invoked whenever a ship is hit. From the AI but also from the Player.
      * The Observable is a ship in all the cases.
      */
-    public void update(Ship s, int index) {
-        int minRow, minCol, maxRow, maxCol;
-        Location a = s.getFirstLocation();
-        Location b = s.getSecondLocation();
-
-        // Setup which coordinates need to be checked
-        if (a.width == b.width) {
-            minCol = a.width;
-            maxCol = a.width;
-            if (a.height < b.height) {
-                minRow = a.height;
-                maxRow = b.height;
-            } else {
-                minRow = b.height;
-                maxRow = a.height;
-            }
+    public void update(Ship s, Location c, int index, boolean wasDestroyed) {
+        if(isForPlayer) {
+            visualBoard[c.width][c.height] = s.getShipSymbolAt(index);
         } else {
-            minRow = a.height;
-            maxRow = a.height;
-            if (a.width < b.width) {
-                minCol = a.width;
-                maxCol = b.width;
+            if(wasDestroyed) {
+                visualBoard[c.width][c.height] = s.getShipSymbol();
             } else {
-                minCol = b.width;
-                maxCol = a.width;
+                visualBoard[c.width][c.height] = s.getShipSymbolAt(index);
             }
-        }
-
-        if(minCol == maxCol){
-            visualBoard[minCol][minRow + index] = s.getShipSymbolAt(index); // needs to be updated, need shipSymbol@index
-        } else {
-            visualBoard[minCol + index][minRow] = s.getShipSymbolAt(index); // ... same here
         }
 
     }
@@ -207,8 +185,9 @@ class Board implements MyObserver{
     public void shoot(Location a){
         if(grid[a.width][a.height] == null){
             visualBoard[a.width][a.height] = 'O';
-        } else {
-            // TODO: Implement what happens when a target was hit.
+        } else if (grid[a.width][a.height] instanceof Target){ // This is a bit advanced. Needs checking if it worked.
+            Target q = (Target) grid[a.width][a.height];
+            q.hit(a);
         }
     }
 

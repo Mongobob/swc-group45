@@ -16,4 +16,5 @@ public interface Ship {
     boolean checkShipSize(Location a, Location b);
     void setShipSymbol(char c); //to change the Shipsymbol into X or O if we hit or not
 
+
 }
