@@ -1,6 +1,8 @@
 package assignment03;
 
-interface Ship {
+import java.util.Observable;
+
+public interface Ship {
 
     Location getFirstLocation();
     Location getSecondLocation();

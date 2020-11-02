@@ -1,8 +1,28 @@
 package assignment03;
 
-class Submarine implements Ship {
+class Submarine extends MilitaryShip {
 
-    char shipSymbol = 'S';
+    /**
+     * Here are the values for the Military Ship Type CARRIER:
+     * - shipSymbol = 'S'
+     * - shipLength = 3
+     * - maxAmountOfThisType = 3;
+     * - hits = 0;
+     * - shipType = "Carrier";
+     */
+
+    public Submarine(Location a, Location b){
+        super('S', 3, 3, a, b, "Carrier");
+    }
+
+    /**
+     * Original Code is still here in Case I messed up.
+     * De-Comment the code below and delete the part above
+     * as well as the MilitaryShip Class in order to restore
+     * original.
+     */
+
+    /*char shipSymbol = 'S';
     private final int shipLength = 3;
     private final int maxAmountOfThisType = 3;//3
     private boolean isValid;
@@ -17,7 +37,7 @@ class Submarine implements Ship {
         this.a = a;
         this.b = b;
         this.isValid = checkShipSize(a, b);
-    }
+    }*/
 
 
 
@@ -58,7 +78,7 @@ class Submarine implements Ship {
         }
     }
 **/
-    public Location getFirstLocation(){ return a; }
+    /*public Location getFirstLocation(){ return a; }
 
     public Location getSecondLocation(){
         return b;
@@ -93,6 +113,6 @@ class Submarine implements Ship {
             return Math.abs(a.width - b.width) == shipLength - 1;
         }
 
-    }
+    }*/
 
 }

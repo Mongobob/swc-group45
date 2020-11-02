@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) {
 
@@ -43,17 +43,25 @@ public class Main {
 
         // Welcome the player
         System.out.println("Welcome to Battleship!!\n");
-        PlayerBoard.drawTheBoard();
+        //PlayerBoard.drawTheBoard();
 
+        Location x = new Location(0,0);
+        Location y = new Location(0,5);
+
+        Ship tester = new Carrier(x,y);
+
+        System.out.println("" + tester.getShipType());
 
         /**
          * The loop serves to initialize the players board
          */
-        Scoreboard scoreboard = Scoreboard.getInstance();
+        //Scoreboard scoreboard = Scoreboard.getInstance();
         int curNumOfShips = 0;
         int numOfCar = 0, numOfBat = 0, numOfSub = 0, numOfPat = 0;
 
         while (totalNumOfShips > curNumOfShips) {
+
+            //PlayerBoard.drawTheBoard();
 
             // There is an other ship to be placed
             System.out.print("Please enter the position of your ");
@@ -66,7 +74,7 @@ public class Main {
                 Carrier s = new Carrier(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    scoreboard.increaseScoreboard(0,s);
+                    //scoreboard.increaseScoreboard(0,s);
 
                     numOfCar++;
                     curNumOfShips++;
@@ -79,7 +87,7 @@ public class Main {
                 BattleShip s = new BattleShip(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    scoreboard.increaseScoreboard(0,s);
+                    //scoreboard.increaseScoreboard(0,s);
                     numOfBat++;
                     curNumOfShips++;
                 } else {
@@ -91,7 +99,7 @@ public class Main {
                 Submarine s = new Submarine(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    scoreboard.increaseScoreboard(0,s);
+                    //scoreboard.increaseScoreboard(0,s);
                     numOfSub++;
                     curNumOfShips++;
                 } else {
@@ -103,7 +111,7 @@ public class Main {
                 PatrolBoat s = new PatrolBoat(tempA, tempB);
                 if (PlayerBoard.safetyCheck(tempA, tempB) && s.isValid()) {
                     PlayerBoard.setShip(s);
-                    scoreboard.increaseScoreboard(0,s);
+                    //scoreboard.increaseScoreboard(0,s);
                     numOfPat++;
                     curNumOfShips++;
                 } else {
@@ -118,7 +126,7 @@ public class Main {
         System.out.print("\n");
         System.out.print("Your Board is: \n");
         PlayerBoard.hitShip(0,0);
-        PlayerBoard.drawTheBoard(false);
+        //PlayerBoard.drawTheBoard(false);
         System.out.print("\n");
 
 
@@ -130,17 +138,17 @@ public class Main {
          * for debugging purpose.
          */
         //TODO: But this Code Snipped at it's right place.
-        eve.fillTheBoard(enemy,scoreboard);
+        //eve.fillTheBoard(enemy,scoreboard);
         System.out.println("\n");
         System.out.println("The opponent's Board is: ");
-        enemy.drawTheBoard(true);
+        //enemy.drawTheBoard(true);
         System.out.println("\n");
 
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         //Shoot Player = new Shoot();
         //Player.StartOfShooting();
-=======
+//=======
         int NumOfActualShipsPlayer = 10;
         int NumOfActualShipsAI = 10;
 
@@ -155,7 +163,7 @@ public class Main {
         System.out.println();
 
     GameMaster gameMaster=new GameMaster();
-    gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
+    //gameMaster.get_stuff_iterator(scoreboard,PlayerBoard,enemy);
 
     while (gameMaster.hasNext()){
         gameMaster.next();
@@ -188,7 +196,7 @@ public class Main {
         Location X = new Location();
 
 
->>>>>>> 3e5a7e19b26f3912bb589fda92cc26c142ea76a8
+//>>>>>>> 3e5a7e19b26f3912bb589fda92cc26c142ea76a8
     }
 
 

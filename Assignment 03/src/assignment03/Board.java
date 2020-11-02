@@ -1,28 +1,30 @@
 package assignment03;
 
+import javax.security.auth.Subject;
 import java.awt.*;
 import java.util.ArrayList;
 
-class Board {
+class Board { //implements MyObserver
 
     private Ship[][] grid;
     private int gridSize;
+    private Object owner;
 
     public Board(int gridSize) {
         grid = new Ship[gridSize][gridSize];
         this.gridSize = gridSize;
     }
 
-
     // returns the size of the grid
     public int getGridSize() {
         return gridSize;
     }
 
+
     /**
      * Method that draws the board at the end.
      */
-    public void drawTheBoard(boolean enemy) {
+    /*public void drawTheBoard(boolean enemy) {
 
         char[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'};
 
@@ -61,7 +63,7 @@ class Board {
             }
             System.out.print("\n");
         }
-    }
+    }*/
 
     /**
      * A safety check to make sure the given inputs are correct.
@@ -149,7 +151,7 @@ class Board {
         for (int i = minCol; i <= maxCol; i++) {
             for (int h = minRow; h <= maxRow; h++) {
                 grid[i][h] = s;
-                ShipCoord.add(i);//TODO der richtige Char herausfinden
+                // ShipCoord.add(i);//
             }
         }
 
@@ -159,4 +161,8 @@ class Board {
         grid[a][b].setShipSymbol('X');
     }
 
+
+    public void update(MyObservable o, int index) {
+
+    }
 }

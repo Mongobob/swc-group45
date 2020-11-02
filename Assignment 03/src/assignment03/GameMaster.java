@@ -27,14 +27,14 @@ public class GameMaster implements Iterator {
         this.enemy=enemyshot;
 
     }
-    //public Object next(){
+    public Object next(){return "True";}
 
-        scoreboard.printScoreboard();
+       // scoreboard.printScoreboard();
         //Scoreboard;
         //AI-Player shoots
         //Player shoots
 
-        player.drawTheBoard();
+        //player.drawTheBoard();
 
         //Show own board
         //Show opponent's board
@@ -43,7 +43,7 @@ public class GameMaster implements Iterator {
 
     //}
 
-    //public boolean hasNext() {
+    //public boolean hasNext(){
       //  if (totalNumOfShips > curNumOfShips) {
         //    return true;
        // } else {
@@ -53,8 +53,8 @@ public class GameMaster implements Iterator {
     //}
 //}
 
-    return 0;
-    }
+ //   return 0;
+   // }
 
     public boolean hasNext() {
         if (playerscore==-1 || aiscore==-1) {

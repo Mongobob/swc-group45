@@ -1,8 +1,28 @@
 package assignment03;
 
-class PatrolBoat implements Ship {
+class PatrolBoat extends MilitaryShip {
 
-    char shipSymbol = 'P';
+    /**
+     * Here are the values for the Military Ship Type CARRIER:
+     * - shipSymbol = 'P'
+     * - shipLength = 2
+     * - maxAmountOfThisType = 4;
+     * - hits = 0;
+     * - shipType = "PatrolBoat";
+     */
+
+    public PatrolBoat(Location a, Location b){
+        super('P', 2, 4, a, b, "PatrolBoat");
+    }
+
+    /**
+     * Original Code is still here in Case I messed up.
+     * De-Comment the code below and delete the part above
+     * as well as the MilitaryShip Class in order to restore
+     * original.
+     */
+
+    /*char shipSymbol = 'P';
     private final int shipLength = 2;
     private final int maxAmountOfThisType = 4; //4
     private boolean isValid;
@@ -53,6 +73,6 @@ class PatrolBoat implements Ship {
             return Math.abs(a.width - b.width) == shipLength - 1;
         }
 
-    }
+    }*/
 
 }

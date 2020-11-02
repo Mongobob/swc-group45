@@ -1,8 +1,29 @@
 package assignment03;
 
-class Carrier implements Ship {
+class Carrier extends MilitaryShip {
 
-    char shipSymbol = 'C';
+    /**
+     * Here are the values for the Military Ship Type CARRIER:
+     * - shipSymbol = 'C'
+     * - shipLength = 6
+     * - maxAmountOfThisType = 1;
+     * - hits = 0;
+     * - shipType = "Carrier";
+     */
+
+    public Carrier(Location a, Location b){
+        super('C', 6, 1, a, b, "Carrier");
+    }
+
+    /**
+     * Original Code is still here in Case I messed up.
+     * De-Comment the code below and delete the part above
+     * as well as the MilitaryShip Class in order to restore
+     * original.
+     */
+
+
+    /*char shipSymbol = 'C';
     private final int shipLength = 6;
     private final int maxAmountOfThisType = 1;
     private boolean isValid;
@@ -30,7 +51,7 @@ class Carrier implements Ship {
     public boolean isValid() { return isValid; }
 
     public String getShipType() {
-        return shipType;
+        return this.shipType;
     }
 
     public int getMaxAmount() { return maxAmountOfThisType; }
@@ -53,7 +74,7 @@ class Carrier implements Ship {
             return Math.abs(a.width - b.width) == shipLength - 1;
         }
 
-    }
+    }*/
 
 }
 
