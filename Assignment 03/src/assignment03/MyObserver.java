@@ -2,6 +2,6 @@ package assignment03;
 
 public interface MyObserver {
 
-    void update(MyObservable o, int i);
+    void update(Ship s, int i);
 
 }

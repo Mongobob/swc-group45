@@ -32,7 +32,7 @@ class Main {
         int totalNumOfShips = fakeCarrier.getMaxAmount() + fakeBattleShip.getMaxAmount() + fakeSubmarine.getMaxAmount()
                 + fakePatrolBoat.getMaxAmount();
         int gridSize = 10;
-        Board PlayerBoard = new Board(gridSize);
+        Board PlayerBoard = new Board(gridSize, true);
 
         // Getting the Scanner up and running
         Scanner in = new Scanner(System.in);
@@ -130,7 +130,7 @@ class Main {
         System.out.print("\n");
 
 
-        Board enemy = new Board(gridSize);
+        Board enemy = new Board(gridSize, false);
         AiPlayer eve = new AiPlayer(enemy);
 
         /**

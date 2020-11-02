@@ -1,6 +1,7 @@
 package assignment03;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MilitaryShip implements Ship, MyObservable {
 
@@ -8,7 +9,7 @@ public class MilitaryShip implements Ship, MyObservable {
     private final int shipLength;
     private final int maxAmountOfThisType;
     private boolean isValid;
-    private int hits;
+    private char[] shipSymbolAt;
 
     private String shipType;
     private ArrayList<MyObserver> myObservers; // new
@@ -24,6 +25,9 @@ public class MilitaryShip implements Ship, MyObservable {
         this.b = b;
         this.shipType = shipType;
         this.isValid = checkShipSize(a, b);
+
+        this.shipSymbolAt = new char[shipLength]; // added this in order to have a ShipSymbolValue for each square
+        Arrays.fill(shipSymbolAt, shipSymbol);
     }
 
     /**
@@ -39,9 +43,7 @@ public class MilitaryShip implements Ship, MyObservable {
      * (New) This method removes an Observer Object from my List of Observers.
      */
     public void removeObserver(MyObserver knownObserver){
-        if(myObservers.contains(knownObserver)) {
-            myObservers.remove(knownObserver);
-        }
+        myObservers.remove(knownObserver);
     }
 
     /**
@@ -53,6 +55,21 @@ public class MilitaryShip implements Ship, MyObservable {
         for(int i = 0; i < myObservers.size(); i++){
             myObservers.get(i).update(this, index);
         }
+    }
+
+    /**
+     * (New) This method allows to access the array if you know
+     * the index you're looking for.
+     */
+    public char getShipSymbolAt(int index){
+
+        char value = ' ';
+
+        if(index <= shipSymbolAt.length){
+            value = shipSymbolAt[index];
+        }
+
+        return value;
     }
 
     public Location getFirstLocation(){
@@ -75,12 +92,9 @@ public class MilitaryShip implements Ship, MyObservable {
 
     public char getShipSymbol() { return shipSymbol; }
 
-    public int getHits(){return hits;}
-
     public void setShipSymbol(char c){
         shipSymbol = c;
     }
-
 
     public boolean checkShipSize(Location a, Location b) {
 
