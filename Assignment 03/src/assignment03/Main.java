@@ -186,6 +186,7 @@ class Main {
         a.update(LocA);
         b.update(LocB);
 
+
     }
 
 }
