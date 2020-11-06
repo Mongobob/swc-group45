@@ -9,9 +9,7 @@ public class Customer implements DoingOptions {
     private int Savings;
     private final int IDNumber;
     private final int CreditCardType;
-    /** TODO need something to track the customers data
-     * Hashmap
-     */
+
 
 
 
@@ -53,8 +51,11 @@ public class Customer implements DoingOptions {
     }
 
     @Override
-    public int PayingWithBank(int BAmount) {
-        return 0;
+    public boolean PayingWithBank(int BAmount) {
+        if(Savings < BAmount){
+            return false;
+        }
+        else return true;
     }
     /**public boolean PayingWithCC(int CCAmount){
         return Withdraw() <= CreditCardType;

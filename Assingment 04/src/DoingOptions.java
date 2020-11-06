@@ -10,7 +10,7 @@ public interface DoingOptions {
     int Withdraw(int WAmount);
     int Deposit(int DAmount);
     boolean PayingWithCC(int CCAmount);
-    int PayingWithBank(int BAmount);
+    boolean PayingWithBank(int BAmount);
 
 
 
