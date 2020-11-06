@@ -1,7 +1,7 @@
 public class PlatinumCustomer extends Customer {
 
 
-    protected PlatinumCustomer(String Name, String Surname, int Age, int BankAccountNumber, int Savings, int IDNumber, String CreditCardType) {
+    protected PlatinumCustomer(String Name, String Surname, int Age, int BankAccountNumber, int Savings, int IDNumber, int CreditCardType) {
         super(Name, Surname, Age, BankAccountNumber, Savings, IDNumber, CreditCardType);
     }
     /**They have a regular credit card and can only pay

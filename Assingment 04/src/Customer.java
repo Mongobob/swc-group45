@@ -8,14 +8,15 @@ public class Customer implements DoingOptions {
     private final int BankAccountNumber;
     private int Savings;
     private final int IDNumber;
-    private final String CreditCardType;
+    private final int CreditCardType;
     /** TODO need something to track the customers data
+     * Hashmap
      */
 
 
 
     protected Customer(String Name, String Surname, int Age, int BankAccountNumber, int Savings,
-                       int IDNumber, String CreditCardType){
+                       int IDNumber, int CreditCardType){
 
         this.Name = Name;
         this.Surname = Surname;
@@ -35,13 +36,20 @@ public class Customer implements DoingOptions {
     public int getBankAccountNumber(){return BankAccountNumber;}
     public int getSavings(){return Savings;}
     public int getIDNumber(){return IDNumber;}
-    public String getCCType(){return CreditCardType;}
-    public int Withdraw(int WAmount){return Savings-Withdraw(WAmount);}
-    public int Deposit(int DAmount){return Savings+Deposit(DAmount);}
+    public int getCCType(){return CreditCardType;}
+    public int Withdraw(int WAmount){
+        Savings = Savings-WAmount;
+        return Savings;}
+    public int Deposit(int DAmount){
+        Savings = Savings+DAmount;
+        return Savings;}
 
     @Override
     public boolean PayingWithCC(int CCAmount) {
-        return false;
+        if (CCAmount > CreditCardType){
+            return false;
+        }
+        else return true;
     }
 
     @Override

@@ -1,8 +1,9 @@
 class RegularCustomer extends Customer{
 
 
-    public RegularCustomer(String Name, String Surname, int Age, int BankAccountNumber, int Savings, int IDNumber, String CreditCardType) {
+    public RegularCustomer(String Name, String Surname, int Age, int BankAccountNumber, int Savings, int IDNumber, int CreditCardType) {
         super(Name, Surname, Age, BankAccountNumber, Savings, IDNumber, CreditCardType);
+
     }
 
 
