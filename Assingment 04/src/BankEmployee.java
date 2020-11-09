@@ -1,13 +1,35 @@
 public class BankEmployee {
-    /**
-    This should be the super class for the Bank employee's
-    they need:
-            Name:
-            Surname:
-            ID number:
-            List of customers that are assigned to them:
-            upgrade their customers given their Customer ID:
 
+     private final String Name;
+     private final String Surname;
+     private final int IDNumber;
+
+
+
+
+    /**
+     We have to conect the customer to a Bankemployee that means like a 1:n connection
      */
 
+    /** we need an upgrade methond that upgrades only regular to golden given the Customers ID
+     */
+
+    protected BankEmployee(String Name, String Surname, int IDNumber){
+        this.Name = Name;
+        this.Surname = Surname;
+        this.IDNumber = IDNumber;
+    }
+
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public int getIDNumber() {
+        return IDNumber;
+    }
 }

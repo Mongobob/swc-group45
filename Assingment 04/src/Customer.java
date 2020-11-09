@@ -1,20 +1,20 @@
-import javax.sound.midi.Track;
-
 public class Customer implements DoingOptions {
 
     private final String Name;
     private final String Surname;
     private int Age;
     private final int BankAccountNumber;
-    private int Savings;
+    private float Savings;
     private final int IDNumber;
     private final int CreditCardType;
+    private final int CreditCardSerialNumber;
+
 
 
 
 
     protected Customer(String Name, String Surname, int Age, int BankAccountNumber, int Savings,
-                       int IDNumber, int CreditCardType){
+                       int IDNumber, int CreditCardType, int CreditCardSerialNumber){
 
         this.Name = Name;
         this.Surname = Surname;
@@ -23,40 +23,47 @@ public class Customer implements DoingOptions {
         this.Savings = Savings;
         this.IDNumber = IDNumber;
         this.CreditCardType = CreditCardType;
-
-
-
+        this.CreditCardSerialNumber =CreditCardSerialNumber;
     }
 
     public String getName(){return Name;}
     public String getSurname(){return Surname;}
     public int getAge(){return Age;}
     public int getBankAccountNumber(){return BankAccountNumber;}
-    public int getSavings(){return Savings;}
+    public float getSavings(){return Savings;}
     public int getIDNumber(){return IDNumber;}
     public int getCCType(){return CreditCardType;}
-    public int Withdraw(int WAmount){
-        Savings = Savings-WAmount;
-        return Savings;}
-    public int Deposit(int DAmount){
+
+
+
+    public boolean Withdraw(float WAmount){
+        if (WAmount > Savings){
+            return false;
+        }
+        else Savings = Savings-WAmount;
+            return true;}
+
+    public float Deposit(float DAmount){
         Savings = Savings+DAmount;
         return Savings;}
 
     @Override
     public boolean PayingWithCC(int CCAmount) {
-        if (CCAmount > CreditCardType){
-            return false;
-        }
-        else return true;
+        return !(CCAmount > CreditCardType);
     }
 
     @Override
     public boolean PayingWithBank(int BAmount) {
-        if(Savings < BAmount){
-            return false;
-        }
-        else return true;
+        return !(Savings < BAmount);
     }
+
+
+    public int getCreditCardSerialNumber() {
+        return CreditCardSerialNumber;
+    }
+
+
+
     /**public boolean PayingWithCC(int CCAmount){
         return Withdraw() <= CreditCardType;
     };

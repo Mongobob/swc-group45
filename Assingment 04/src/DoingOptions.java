@@ -4,13 +4,14 @@ public interface DoingOptions {
     String getSurname();
     int getAge();
     int getBankAccountNumber();
-    int getSavings();
+    float getSavings();
     int getIDNumber();
     int getCCType();
-    int Withdraw(int WAmount);
-    int Deposit(int DAmount);
+    boolean Withdraw(float WAmount);
+    float Deposit(float DAmount);
     boolean PayingWithCC(int CCAmount);
     boolean PayingWithBank(int BAmount);
+    int getCreditCardSerialNumber();
 
 
 
