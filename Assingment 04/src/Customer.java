@@ -7,14 +7,14 @@ public class Customer implements DoingOptions {
     private float Savings;
     private final int IDNumber;
     private final int CreditCardType;
-    private final int CreditCardSerialNumber;
+    private final int EmployeeID;
 
 
 
 
 
     protected Customer(String Name, String Surname, int Age, int BankAccountNumber, int Savings,
-                       int IDNumber, int CreditCardType, int CreditCardSerialNumber){
+                       int IDNumber, int CreditCardType, int EmployeeID){
 
         this.Name = Name;
         this.Surname = Surname;
@@ -23,7 +23,7 @@ public class Customer implements DoingOptions {
         this.Savings = Savings;
         this.IDNumber = IDNumber;
         this.CreditCardType = CreditCardType;
-        this.CreditCardSerialNumber =CreditCardSerialNumber;
+        this.EmployeeID = EmployeeID; /** the ID number from the Employee */
     }
 
     public String getName(){return Name;}
@@ -57,10 +57,12 @@ public class Customer implements DoingOptions {
         return !(Savings < BAmount);
     }
 
-
-    public int getCreditCardSerialNumber() {
-        return CreditCardSerialNumber;
+    @Override
+    public int getEmployeeID() {
+        return EmployeeID;
     }
+
+
 
 
 

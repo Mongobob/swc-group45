@@ -1,0 +1,33 @@
+import java.util.IdentityHashMap;
+import java.util.concurrent.TimeUnit;
+
+public class WebTechnician {
+
+    private final String Name;
+    private final String Surname;
+    private final int IDNumber;
+
+    public WebTechnician(String Name, String Surname, int IDNumber){
+        this.Name = Name;
+        this.Surname = Surname;
+        this.IDNumber = IDNumber;
+    }
+
+    public int getIDNumber() {
+        return IDNumber;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    void fixWebsite() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(30);{
+            System.out.println("reparation complete");
+        }
+    }
+}

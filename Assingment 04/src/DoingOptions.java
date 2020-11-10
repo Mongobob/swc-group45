@@ -11,7 +11,7 @@ public interface DoingOptions {
     float Deposit(float DAmount);
     boolean PayingWithCC(int CCAmount);
     boolean PayingWithBank(int BAmount);
-    int getCreditCardSerialNumber();
+    int getEmployeeID();
 
 
 
