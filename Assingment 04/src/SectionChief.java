@@ -1,9 +1,16 @@
 public class SectionChief extends BankEmployee{
 
-    protected SectionChief(String Name, String Surname, int IDNumber) {
+    private final String City;
+
+    protected SectionChief(String Name, String Surname, int IDNumber, String City) {
+
         super(Name, Surname, IDNumber);
+        this.City = City;
     }
 
+    public String getCity() {
+        return City;
+    }
 
 }
 

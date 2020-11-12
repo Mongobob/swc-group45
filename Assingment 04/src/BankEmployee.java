@@ -23,7 +23,6 @@ public class BankEmployee {
 
     }
 
-
     public String getName() {
         return Name;
     }
