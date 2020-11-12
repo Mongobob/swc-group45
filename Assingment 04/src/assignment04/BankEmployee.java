@@ -17,10 +17,12 @@ public class BankEmployee {
     //TODO we need an upgrade method that upgrades regular to golden given the Customers ID, because every Empl. can do this
 
 
-    protected BankEmployee(String Name, String Surname, EmployeeCounter IDNumber){
+    protected BankEmployee(String Name, String Surname){
         this.Name = Name;
         this.Surname = Surname;
-        this.IDNumber = IDNumber.getEmployeeID();
+        EmployeeCounter EmpCounter = EmployeeCounter.getInstance();
+        EmpCounter.increaseID();
+        this.IDNumber = EmpCounter.getEmployeeID();
 
     }
 

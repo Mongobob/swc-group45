@@ -28,7 +28,7 @@ class WebTechnicianTest {
     void FunctionalityCheck() {
         String[] firstNames = {"James", "Sarah", "Jon"};
         String[] lastNames = {"Smith", "Greenwood", "Oliver"};
-        int[] ids = {1, 2, 3};
+        int[] ids = {10000};
 
 
         for (int i = 0; i < firstNames.length; i++) {

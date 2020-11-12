@@ -13,19 +13,27 @@ public class Customer implements DoingOptions {
 
 
 
+/* main:
 
+    Customer Josip = new Customer("Josip", "Haram", 23, 2342, 1299, "A", 234)
+    Custome Manga = new Customer("Manga"...)
+
+ */
 
     protected Customer(String Name, String Surname, int Age, int BankAccountNumber, int Savings,
-                       CustomerCounter IDNumber, int CreditCardType, int EmployeeID){
+                        int CreditCardType, int EmployeeID){
 
         this.Name = Name;
         this.Surname = Surname;
         this.Age = Age;
         this.BankAccountNumber = BankAccountNumber;
         this.Savings = Savings;
-        this.IDNumber = IDNumber.getCustomerID();
+        CustomerCounter counter = CustomerCounter.getInstance();
+        counter.increaseID();
+        this.IDNumber = counter.getCustomerID();
         this.CreditCardType = CreditCardType;
         this.EmployeeID = EmployeeID; /** the ID number from the Employee */
+
     }
 
     public String getName(){return Name;}
