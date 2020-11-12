@@ -1,11 +1,14 @@
-import org.junit.jupiter.api.Test;
+package assignment04;
+
+import org.testng.annotations.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BackEndTechnicianTest {
+class WebTechnicianTest {
 
     @Test
     void getIDNumber() {
+        System.out.println("Hello");
     }
 
     @Test
@@ -17,6 +20,6 @@ class BackEndTechnicianTest {
     }
 
     @Test
-    void fixBackEnd() {
+    void fixWebsite() {
     }
 }

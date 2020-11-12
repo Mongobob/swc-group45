@@ -1,4 +1,5 @@
-import java.awt.*;
+package assignment04;
+
 import java.util.ArrayList;
 
 public class BankEmployee {

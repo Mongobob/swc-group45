@@ -1,3 +1,5 @@
+package assignment04;
+
 public class GoldenCustomer extends Customer {
 
 

@@ -1,8 +1,10 @@
+package assignment04;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WebTechnicianTest {
+class BackEndTechnicianTest {
 
     @Test
     void getIDNumber() {
@@ -17,6 +19,6 @@ class WebTechnicianTest {
     }
 
     @Test
-    void fixWebsite() {
+    void fixBackEnd() {
     }
 }

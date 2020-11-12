@@ -1,3 +1,5 @@
+package assignment04;
+
 public class Customer implements DoingOptions {
 
     private final String Name;
