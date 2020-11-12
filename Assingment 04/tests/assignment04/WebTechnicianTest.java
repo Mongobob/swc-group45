@@ -2,12 +2,26 @@ package assignment04;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 class WebTechnicianTest {
+
+    private static String[] firstNames = {"James", "Sarah", "Jon"};
+    private static String[] lastNames = {"Smith", "Greenwood", "Oliver"};
+    private static int[] ids = {1, 2, 3};
+    private static ArrayList<WebTechnician> staff = new ArrayList<>();
+
+    public static void main(String[] args){
+
+        for (int i = 0; i < firstNames.length; i++) {
+            staff.add(new WebTechnician(firstNames[i], lastNames[i], new EmployeeCounter()));
+        }
+
+
+    }
 
     @Test
     @DisplayName("Basic Functionality Check for Generator and Call Methods")
@@ -15,10 +29,10 @@ class WebTechnicianTest {
         String[] firstNames = {"James", "Sarah", "Jon"};
         String[] lastNames = {"Smith", "Greenwood", "Oliver"};
         int[] ids = {1, 2, 3};
-        List<WebTechnician> staff = new ArrayList<>();
+
 
         for (int i = 0; i < firstNames.length; i++) {
-            staff.add(new WebTechnician(firstNames[i], lastNames[i], ids[i]));
+            staff.add(new WebTechnician(firstNames[i], lastNames[i], new EmployeeCounter()));
         }
 
         for (int i = 0; i < staff.size(); i++) {
@@ -39,5 +53,17 @@ class WebTechnicianTest {
 
     @Test
     void fixWebsite() {
+    }
+
+    @Nested
+    @DisplayName("TESTS")
+    class Blabla {
+        private final int x = 2;
+
+        @Test
+        @DisplayName("Trial by fire")
+        void testertest() {
+            Assertions.assertEquals(2, x);
+        }
     }
 }

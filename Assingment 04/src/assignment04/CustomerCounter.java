@@ -1,3 +1,5 @@
+package assignment04;
+
 public class CustomerCounter {
 
         private static CustomerCounter uniqueInstance;

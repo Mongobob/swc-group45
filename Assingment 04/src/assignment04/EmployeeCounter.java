@@ -1,3 +1,4 @@
+package assignment04;
 
 public class EmployeeCounter {
 
@@ -6,7 +7,7 @@ public class EmployeeCounter {
         private int EmployeeID = 10000;
 
         // instance variables coming here
-        private EmployeeCounter(){}
+        protected EmployeeCounter(){}
 
         public static EmployeeCounter getInstance(){
             if (uniqueInstance == null){
