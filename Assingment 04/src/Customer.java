@@ -14,14 +14,14 @@ public class Customer implements DoingOptions {
 
 
     protected Customer(String Name, String Surname, int Age, int BankAccountNumber, int Savings,
-                       int IDNumber, int CreditCardType, int EmployeeID){
+                       CustomerCounter IDNumber, int CreditCardType, int EmployeeID){
 
         this.Name = Name;
         this.Surname = Surname;
         this.Age = Age;
         this.BankAccountNumber = BankAccountNumber;
         this.Savings = Savings;
-        this.IDNumber = IDNumber;
+        this.IDNumber = IDNumber.getCustomerID();
         this.CreditCardType = CreditCardType;
         this.EmployeeID = EmployeeID; /** the ID number from the Employee */
     }

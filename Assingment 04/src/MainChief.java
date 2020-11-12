@@ -1,7 +1,7 @@
 public class MainChief extends BankEmployee{
 
-    protected MainChief(String Name, String Surname, int IDNumber) {
-        super(Name, Surname, IDNumber);
+    protected MainChief(String Name, String Surname, EmployeeCounter EmployeeID) {
+        super(Name, Surname, EmployeeID);
     }
 }
 

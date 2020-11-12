@@ -1,7 +1,7 @@
 public class GoldenCustomer extends Customer {
 
 
-    protected GoldenCustomer(String Name, String Surname, int Age, int BankAccountNumber, int Savings, int IDNumber, int CreditCardSerialNumber) {
+    protected GoldenCustomer(String Name, String Surname, int Age, int BankAccountNumber, int Savings, CustomerCounter IDNumber, int CreditCardSerialNumber) {
         super(Name, Surname, Age, BankAccountNumber, Savings, IDNumber, 5000, CreditCardSerialNumber);
     }
     /**

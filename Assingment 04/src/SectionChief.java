@@ -2,9 +2,9 @@ public class SectionChief extends BankEmployee{
 
     private final String City;
 
-    protected SectionChief(String Name, String Surname, int IDNumber, String City) {
+    protected SectionChief(String Name, String Surname, EmployeeCounter EmployeeID, String City) {
 
-        super(Name, Surname, IDNumber);
+        super(Name, Surname, EmployeeID);
         this.City = City;
     }
 

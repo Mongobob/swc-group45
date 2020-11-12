@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class RegularEmployee extends BankEmployee{
 
-    protected RegularEmployee(String Name, String Surname, int IDNumber) {
-        super(Name, Surname, IDNumber);
+    protected RegularEmployee(String Name, String Surname, EmployeeCounter EmployeeID) {
+        super(Name, Surname, EmployeeID);
     }
 }
 /** can only upgrade from regular to golden nothing else
