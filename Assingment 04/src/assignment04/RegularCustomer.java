@@ -1,3 +1,5 @@
+package assignment04;
+
 class RegularCustomer extends Customer{
 
 

@@ -1,3 +1,5 @@
+package assignment04;
+
 public class MainChief extends BankEmployee{
 
     protected MainChief(String Name, String Surname, EmployeeCounter EmployeeID) {

@@ -1,13 +1,13 @@
-import java.util.IdentityHashMap;
-import java.util.concurrent.TimeUnit;
+package assignment04;
 
-public class WebTechnician {
+public class BackEndTechnician {
+
 
     private final String Name;
     private final String Surname;
     private final int IDNumber;
 
-    public WebTechnician(String Name, String Surname, EmployeeCounter IDNumber){
+    public BackEndTechnician(String Name, String Surname, EmployeeCounter IDNumber){
         this.Name = Name;
         this.Surname = Surname;
         this.IDNumber = IDNumber.getEmployeeID();
@@ -25,9 +25,7 @@ public class WebTechnician {
         return Name;
     }
 
-    void fixWebsite() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(30);{
-            System.out.println("reparation complete");
-        }
+    void fixBackEnd(int IDNumber){
+        System.out.println("fixed");
     }
 }

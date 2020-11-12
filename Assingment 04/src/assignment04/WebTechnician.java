@@ -1,13 +1,14 @@
+package assignment04;
+
 import java.util.concurrent.TimeUnit;
 
-public class BackEndTechnician {
-
+public class WebTechnician {
 
     private final String Name;
     private final String Surname;
     private final int IDNumber;
 
-    public BackEndTechnician(String Name, String Surname, EmployeeCounter IDNumber){
+    public WebTechnician(String Name, String Surname, EmployeeCounter IDNumber){
         this.Name = Name;
         this.Surname = Surname;
         this.IDNumber = IDNumber.getEmployeeID();
@@ -25,7 +26,9 @@ public class BackEndTechnician {
         return Name;
     }
 
-    void fixBackEnd(int IDNumber){
-        System.out.println("fixed");
+    void fixWebsite() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(30);{
+            System.out.println("reparation complete");
+        }
     }
 }

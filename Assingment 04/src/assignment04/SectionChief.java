@@ -1,3 +1,5 @@
+package assignment04;
+
 public class SectionChief extends BankEmployee{
 
     private final String City;

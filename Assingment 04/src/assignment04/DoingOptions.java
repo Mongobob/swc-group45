@@ -1,3 +1,5 @@
+package assignment04;
+
 public interface DoingOptions {
 
     String getName();

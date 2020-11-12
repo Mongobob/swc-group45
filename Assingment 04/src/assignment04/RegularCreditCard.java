@@ -1,3 +1,5 @@
+package assignment04;
+
 import java.time.YearMonth;
 
 public class RegularCreditCard extends CreditCard{
