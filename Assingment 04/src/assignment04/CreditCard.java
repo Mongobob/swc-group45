@@ -16,12 +16,12 @@ public class CreditCard {
 
     // ID's and information for organisation
     private final long serialNumber;
-    private final int securityCode; // 3 digits
+    private final String securityCode; // 3 digits
     private Date expirationDate;
     private CreditCardType ccType;
 
     // constructor for CreditCards
-    public CreditCard(String name, String surname, int ownerId, int securityCode, CreditCardType ccType){
+    public CreditCard(String name, String surname, int ownerId, String securityCode, CreditCardType ccType){
         this.name = name;
         this.surname = surname;
         // all the CreditCards have the same ID as their owner, they just start with 96 000 ... (max. user = 999 999)
@@ -37,11 +37,17 @@ public class CreditCard {
     public long getSerialNumber() {return serialNumber;}
     public Date getExpirationDate() {return expirationDate;}
 
-    public int getSecurityCode(){
-        if (securityCode > 1000 || securityCode < 100) {
-            return 0;}
-        else {return securityCode;}
-    }
+    public String getSecurityCode(){
+        if (securityCode.length() == 3) {
+
+            for(int i=0; i<3;i++) {
+                if(Character.isDigit(securityCode.charAt(i))){
+
+                }else{return "ERROR";}
+            }
+
+            }
+        return securityCode;}
 
     // unique method that is only meant for this class, automatically makes every CreditCard for two years valid
     private void computeExpirationDate(){

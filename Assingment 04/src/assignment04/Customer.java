@@ -28,7 +28,7 @@ public class Customer {
 
     // constructor to create a new customer (WARNING: Will cause error down the line if used before there is a single employee.)
     protected Customer(String name, String surname, String birthDay, float savings,
-                       CustomerType cType, int pin){
+                       CustomerType cType, String pin){
 
         // Initializing all the general fields
         this.name = name;
