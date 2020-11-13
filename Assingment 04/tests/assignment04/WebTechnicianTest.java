@@ -9,22 +9,17 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * @return the name surname and IDNumber
- * @args are the names
- * we test all the inputs and the methods
- */
+class WebTechnicianTest {
 
-class BackEndTechnicianTest {
     private static String[] firstNames = {"James", "Sarah", "Jon"};
     private static String[] lastNames = {"Smith", "Greenwood", "Oliver"};
     private static int[] ids = {1, 2, 3};
-    private static ArrayList<BackEndTechnician> staff = new ArrayList<>();
+    private static ArrayList<WebTechnician> staff = new ArrayList<>();
 
     public static void main(String[] args){
 
         for (int i = 0; i < firstNames.length; i++) {
-            staff.add(new BackEndTechnician(firstNames[i], lastNames[i], new EmployeeCounter()));
+            staff.add(new WebTechnician(firstNames[i], lastNames[i], new EmployeeCounter()));
         }
 
 
@@ -39,7 +34,7 @@ class BackEndTechnicianTest {
 
 
         for (int i = 0; i < firstNames.length; i++) {
-            staff.add(new BackEndTechnician(firstNames[i], lastNames[i], new EmployeeCounter()));
+            staff.add(new WebTechnician(firstNames[i], lastNames[i], new EmployeeCounter()));
         }
 
         for (int i = 0; i < staff.size(); i++) {
@@ -50,8 +45,7 @@ class BackEndTechnicianTest {
 
     }
 
-    BackEndTechnician h = new BackEndTechnician("Hans","Muster", EmployeeCounter.getInstance());
-
+    WebTechnician h = new WebTechnician("Hans","Muster", EmployeeCounter.getInstance());
 
 
     @Test
@@ -65,14 +59,14 @@ class BackEndTechnicianTest {
     }
 
     @Test
-    void fixBackEnd() {
-        assertEquals("fixed",h.fixBackEnd(h.getIDNumber()));
+    void fixWebsite() throws InterruptedException {
+        assertEquals("reparation complete",h.fixWebsite());
     }
+
 
     @Test
     void getIDNumber(){
         assertEquals(EmployeeCounter.getInstance().getEmployeeID(),h.getIDNumber());
     }
-
 
 }
