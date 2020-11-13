@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-class WebTechnicianTest {
+class WebTechnicianTest2 {
 
     private static String[] firstNames = {"James", "Sarah", "Jon"};
     private static String[] lastNames = {"Smith", "Greenwood", "Oliver"};
