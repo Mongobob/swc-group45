@@ -7,23 +7,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-class CustomerCounterTest {
+class EmployeeCounterTest {
 
     /**
-     * Test of uniqueness of the CustomerCounter
+     * Test of uniqueness of the EmployeeCounter
      */
     @Test
     @DisplayName("Test for uniqueness")
     void getInstanceTest() {
         // making sure we always get the same Counter
-        Assertions.assertEquals(CustomerCounter.getInstance(), CustomerCounter.getInstance());
+        Assertions.assertEquals(EmployeeCounter.getInstance(), EmployeeCounter.getInstance());
 
         // ... even after we used it and made nonsense with it
-        CustomerCounter.getInstance().getCustomerID();
-        CustomerCounter.getInstance().resetID();
-        CustomerCounter.getInstance().getCustomerID();
+        EmployeeCounter.getInstance().getEmployeeID();
+        EmployeeCounter.getInstance().resetID();
+        EmployeeCounter.getInstance().getEmployeeID();
 
-        Assertions.assertEquals(CustomerCounter.getInstance(), CustomerCounter.getInstance());
+        Assertions.assertEquals(EmployeeCounter.getInstance(), EmployeeCounter.getInstance());
     }
 
     /**
@@ -33,9 +33,9 @@ class CustomerCounterTest {
     @DisplayName("Test for returned id values")
     void getIdValuesTest() {
 
-        // check if the CustomerCounter accurately returns the first one hundred ascending id's
+        // check if the EmployeeCounter accurately returns the first one hundred ascending id's
         for(int i = 0; i < 100; i++){
-            Assertions.assertEquals(i, CustomerCounter.getInstance().getCustomerID());
+            Assertions.assertEquals(i, EmployeeCounter.getInstance().getEmployeeID());
         }
 
     }
@@ -49,14 +49,13 @@ class CustomerCounterTest {
 
         // add ten new id's and then reset to see if they are still there
         for(int i = 0; i < 10; i++){
-            CustomerCounter.getInstance().getCustomerID();
+            EmployeeCounter.getInstance().getEmployeeID();
         }
 
-        CustomerCounter.getInstance().resetID();
+        EmployeeCounter.getInstance().resetID();
 
         // after a reset the counter should start at zero again
-        Assertions.assertEquals(0, CustomerCounter.getInstance().getCustomerID());
+        Assertions.assertEquals(0, EmployeeCounter.getInstance().getEmployeeID());
 
     }
-
 }

@@ -26,9 +26,10 @@ public class WebTechnician {
         return Name;
     }
 
-    void fixWebsite() throws InterruptedException {
+    String fixWebsite() throws InterruptedException {
         TimeUnit.SECONDS.sleep(30);{
             System.out.println("reparation complete");
         }
+        return "reparation complete";
     }
 }

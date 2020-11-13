@@ -25,7 +25,8 @@ public class BackEndTechnician {
         return Name;
     }
 
-    void fixBackEnd(int IDNumber){
+    String fixBackEnd(int IDNumber){
         System.out.println("fixed");
+        return "fixed";
     }
 }

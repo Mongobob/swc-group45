@@ -1,4 +1,4 @@
-package TestCases.assignment04;
+package assignment04;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package TestCases.assignment04;
+package assignment04;
 
 import org.junit.jupiter.api.Test;
 
@@ -38,13 +38,13 @@ class SectionChiefTest {
 
     @Test
     void upgradeToPlatinum() {
-        Customer c = new Customer("Hans","Muster","22/10/97",0, Customer.CustomerType.regular,221);
+        Customer c = new Customer("Hans","Muster","22/10/97",0, Customer.CustomerType.regular,"221");
         assertTrue(j.upgradeToPlatinum(c.getId()));
     }
 
     @Test
     void downgradeToRegular() {
-        Customer c = new Customer("Hans","Muster","22/10/97",0, Customer.CustomerType.regular,221);
+        Customer c = new Customer("Hans","Muster","22/10/97",0, Customer.CustomerType.regular,"221");
         assertTrue(j.downgradeToRegular(c.getId()));
     }
 }

@@ -43,9 +43,9 @@ class ArchiveTest {
 
         // ... just by creating employees the archive should have stored them already
         Archive.getInstance();
-        Customer d = new Customer("Gloria", "Gloris", "01/01/2020", 1200000, Customer.CustomerType.platinum, 777);
-        Customer e = new Customer("Stephen", "Colbert", "13/06/1976", 400000, Customer.CustomerType.regular, 467);
-        Customer f = new Customer("Ru", "Paul", "12/05/1986", 2800000, Customer.CustomerType.gold, 867);
+        Customer d = new Customer("Gloria", "Gloris", "01/01/2020", 1200000, Customer.CustomerType.platinum, "777");
+        Customer e = new Customer("Stephen", "Colbert", "13/06/1976", 400000, Customer.CustomerType.regular, "467");
+        Customer f = new Customer("Ru", "Paul", "12/05/1986", 2800000, Customer.CustomerType.gold, "867");
 
         // ... check if they are stored
         Assertions.assertEquals(3, Archive.getInstance().amountCustomer());
