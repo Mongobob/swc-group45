@@ -4,7 +4,7 @@ public class EmployeeCounter {
 
     private static EmployeeCounter uniqueInstance;
 
-    private int employeeID = 1;
+    private int employeeID = 0;
 
     // instance variables coming here
     protected EmployeeCounter(){}
