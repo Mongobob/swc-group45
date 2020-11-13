@@ -54,27 +54,13 @@ public class CustomerTest {
     }
 
     @Test
-    void getExpirationDate() {
+    void function1() {
+        d.deposit(20);
+        Assertions.assertEquals(1200020, d.getSavings());
+        e.deposit(100);
+        Assertions.assertEquals(400100, e.getSavings());
     }
 
-    @Test
-    void getSecurityCode() {
-    }
 
-    @Test
-    void getCCType() {
-    }
-
-    @Test
-    void changeCCType() {
-    }
-
-    @Test
-    void getLimit() {
-    }
-
-    @Test
-    void isExpired() {
-    }
 
 }
