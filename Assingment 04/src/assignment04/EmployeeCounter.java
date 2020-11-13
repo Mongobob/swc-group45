@@ -2,25 +2,27 @@ package assignment04;
 
 public class EmployeeCounter {
 
-        private static EmployeeCounter uniqueInstance;
+    private static EmployeeCounter uniqueInstance;
 
-        private int EmployeeID = 10000;
+    private int employeeID = 1;
 
-        // instance variables coming here
-        protected EmployeeCounter(){}
+    // instance variables coming here
+    protected EmployeeCounter(){}
 
-        public static EmployeeCounter getInstance(){
-            if (uniqueInstance == null){
-                        uniqueInstance = new EmployeeCounter();
-                    }
-
-            return uniqueInstance;
+    public static EmployeeCounter getInstance(){
+        if (uniqueInstance == null){
+            uniqueInstance = new EmployeeCounter();
         }
-        void increaseID(){
-            EmployeeID+= 1;
-        }
+
+        return uniqueInstance;
+    }
 
     public int getEmployeeID() {
-        return EmployeeID;
+        return employeeID++;
     }
+
+    public void resetID() {
+        employeeID = 0;
+    }
+
 }

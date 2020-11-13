@@ -2,26 +2,28 @@ package assignment04;
 
 public class CustomerCounter {
 
-        private static CustomerCounter uniqueInstance;
+    private static CustomerCounter uniqueInstance;
 
-        private int CustomerID = 10000000;
+    private int customerID = 0;
 
-        // instance variables coming here
-        private CustomerCounter(){}
+    // instance variables coming here
+    private CustomerCounter(){}
 
-        public static CustomerCounter getInstance(){
-            if (uniqueInstance == null){
-                uniqueInstance = new CustomerCounter();
-            }
-
-            return uniqueInstance;
-        }
-        void increaseID(){
-            CustomerID+= 1;
+    public static CustomerCounter getInstance(){
+        if (uniqueInstance == null){
+            uniqueInstance = new CustomerCounter();
         }
 
-        public int getCustomerID() {
-            return CustomerID;
-        }
+        return uniqueInstance;
     }
+
+    public int getCustomerID() {
+        return customerID++;
+    }
+
+    public void resetID() {
+        customerID = 0;
+    }
+
+}
 

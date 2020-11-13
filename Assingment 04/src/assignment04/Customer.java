@@ -3,6 +3,7 @@ package assignment04;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class Customer {
 
@@ -16,7 +17,7 @@ public class Customer {
     private float savings;
 
     // ID's and information for organisation
-    private final int bankAccountNumber;
+    private final long bankAccountNumber;
     private final int IDNumber;
     private final int employeeID;
     private CustomerType myType;
@@ -25,9 +26,9 @@ public class Customer {
     private CreditCard creditCard;
 
 
-    // constructor to create a new customer
-    protected Customer(String name, String surname, String birthDay, int bankAccountNumber, float savings,
-                       CustomerType cType, int pin, int employeeID){
+    // constructor to create a new customer (WARNING: Will cause error down the line if used before there is a single employee.)
+    protected Customer(String name, String surname, String birthDay, float savings,
+                       CustomerType cType, int pin){
 
         // Initializing all the general fields
         this.name = name;
@@ -45,9 +46,9 @@ public class Customer {
         }
 
         // Initializing all the fields needed for organization
-        this.bankAccountNumber = bankAccountNumber;
         this.IDNumber = CustomerCounter.getInstance().getCustomerID();
-        this.employeeID = employeeID; // ID of the employee who's going to be responsible for us
+        this.bankAccountNumber = 84000000 + IDNumber;
+        this.employeeID = getServed(); // ID of the employee who's going to be responsible for us
         this.myType = cType;
 
         // Depending on customer type generate a different CreditCard
@@ -71,7 +72,7 @@ public class Customer {
     public String getSurname() { return surname; }
     public float getSavings() { return savings; }
 
-    public int getBankAccountNumber() { return bankAccountNumber; }
+    public long getBankAccountNumber() { return bankAccountNumber; }
     public int getId() { return IDNumber; }
     public int getEmployeeID() { return employeeID; }
     public CustomerType getMyType() { return myType; }
@@ -139,52 +140,61 @@ public class Customer {
         creditCard.changeCCType(nextCCType);
     }
 
-    /**
-     * All the information given to us from the exercise for this class:
-     *
-     * In this assignment, you are going to create the structure of a bank management system.
-     * The system must include the following entities:
-     *
-     * Customer: The system must keep track of the data of a customer. The data to save are the
-     * customer's name, surname, age, bank account number and their savings (i.e., the amount of
-     * money available to the customer). Moreover, each customer is identified by a unique
-     * Identification Number (ID).
-     * Each customer has a different type of credit card (depending on the customer's level). The
-     * customer can deposit and withdraw cash, use their credit cards, and pay the bills using a
-     * bank transfer. The customer's actions follow these rules:
-     *
-     * ● Depositing money simply adds the sum of money deposited to the customer's
-     * savings. (1)
-     *
-     * ● Withdrawing money removes the specified sum to the customer's savings. A
-     * customer can not withdraw more than the amount of their savings. Withdrawing
-     * money returns the amount of money withdrawn. (2)
-     *
-     * ● Paying with bank transfer is only allowed if the customer has enough savings to pay
-     * the specified amount of money. However, the method subtracts the paid amount from
-     * the customer's savings, but it does not return the amount of money paid. (3)
-     *
-     * ● Paying by credit cards is always allowed, regardless of the amount of money
-     * available in the customer's savings. However, a customer can not pay more than the
-     * amount allowed by its credit card for each transaction (e.g., 2000 CHF for a regular
-     * credit card, as specified below). (4)
-     *
-     * There are three possible level of customers, which can perform different actions:
-     *
-     * 1. Regular customer : they have a Regular Credit Card and can pay only up to
-     * 2000 CHF by credit card per transaction. Payments with bank transfer do not
-     * have an amount limit.
-     *
-     * 2. Golden customer : they have a Gold Credit Card and can pay up to 5000
-     * CHF by credit card per transaction. Payments with bank transfer do not have
-     * an amount limit.
-     *
-     * 3. Platinum customer : they have a Platinum Credit Card and can pay up to
-     * 10000 CHF by credit card per transaction. Payments with bank transfer do
-     * not have an amount limit.
-     *
-     * To successfully complete a payment by credit card, the credit card must not be expired.
-     *
-     */
+    // unique additional method which assigns a new customer at random to an employee and
+    // save him/her in the list of said employee
+    private int getServed() {
+        Random rand = new Random();
+        int empId = rand.nextInt(Archive.getInstance().amountEmployee()); // randomly decide which of our employees gets this customer
+        Archive.getInstance().getEmployee(empId).myCustomers().add(this); // assign customer in list of employee
+        return empId; // return id of the responsible employee
+    }
 
 }
+
+/**
+ * All the information given to us from the exercise for this class:
+ *
+ * In this assignment, you are going to create the structure of a bank management system.
+ * The system must include the following entities:
+ *
+ * Customer: The system must keep track of the data of a customer. The data to save are the
+ * customer's name, surname, age, bank account number and their savings (i.e., the amount of
+ * money available to the customer). Moreover, each customer is identified by a unique
+ * Identification Number (ID).
+ * Each customer has a different type of credit card (depending on the customer's level). The
+ * customer can deposit and withdraw cash, use their credit cards, and pay the bills using a
+ * bank transfer. The customer's actions follow these rules:
+ *
+ * ● Depositing money simply adds the sum of money deposited to the customer's
+ * savings. (1)
+ *
+ * ● Withdrawing money removes the specified sum to the customer's savings. A
+ * customer can not withdraw more than the amount of their savings. Withdrawing
+ * money returns the amount of money withdrawn. (2)
+ *
+ * ● Paying with bank transfer is only allowed if the customer has enough savings to pay
+ * the specified amount of money. However, the method subtracts the paid amount from
+ * the customer's savings, but it does not return the amount of money paid. (3)
+ *
+ * ● Paying by credit cards is always allowed, regardless of the amount of money
+ * available in the customer's savings. However, a customer can not pay more than the
+ * amount allowed by its credit card for each transaction (e.g., 2000 CHF for a regular
+ * credit card, as specified below). (4)
+ *
+ * There are three possible level of customers, which can perform different actions:
+ *
+ * 1. Regular customer : they have a Regular Credit Card and can pay only up to
+ * 2000 CHF by credit card per transaction. Payments with bank transfer do not
+ * have an amount limit.
+ *
+ * 2. Golden customer : they have a Gold Credit Card and can pay up to 5000
+ * CHF by credit card per transaction. Payments with bank transfer do not have
+ * an amount limit.
+ *
+ * 3. Platinum customer : they have a Platinum Credit Card and can pay up to
+ * 10000 CHF by credit card per transaction. Payments with bank transfer do
+ * not have an amount limit.
+ *
+ * To successfully complete a payment by credit card, the credit card must not be expired.
+ *
+ */

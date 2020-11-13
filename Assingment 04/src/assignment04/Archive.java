@@ -26,6 +26,9 @@ public class Archive {
         return uniqueInstance;
     }
 
+    // returns the size of the customer list
+    public int amountCustomer(){ return customerList.size(); }
+
     // returns the customer at the 'id'th position of the array
     public Customer getCustomer(int id){
         return customerList.get(id);
@@ -43,6 +46,9 @@ public class Archive {
         return successful;
     }
 
+    // returns the size of the customer list
+    public int amountEmployee(){ return employeeList.size(); }
+
     // returns the employee at the 'id'th position of the array
     public BankEmployee getEmployee(int id){
         return employeeList.get(id);
@@ -58,6 +64,14 @@ public class Archive {
         }
 
         return successful;
+    }
+
+    // burn the archive down to the ground and start anew
+    public void reset() {
+        customerList = new ArrayList<Customer>();
+        employeeList = new ArrayList<BankEmployee>();
+        CustomerCounter.getInstance().resetID();
+        EmployeeCounter.getInstance().resetID();
     }
 
 }

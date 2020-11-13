@@ -95,13 +95,13 @@ public class CreditCard {
         return expirationDate.before(current);
     }
 
-    /**
-     * All the information given to us from the exercise for this class:
-     *
-     * Credit card: A credit card entity should contain the data of the owner (name and surname),
-     * a serial number, a security code of three digits, and an expiration date. There are three
-     * different types of credit cards: Regular credit card, Gold credit card, and Platinum credit
-     * card.
-     */
-
 }
+
+/**
+ * All the information given to us from the exercise for this class:
+ *
+ * Credit card: A credit card entity should contain the data of the owner (name and surname),
+ * a serial number, a security code of three digits, and an expiration date. There are three
+ * different types of credit cards: Regular credit card, Gold credit card, and Platinum credit
+ * card.
+ */
