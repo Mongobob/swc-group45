@@ -69,6 +69,14 @@ public class CustomerTest {
         Assertions.assertEquals(0, y);
     }
 
+    @Test
+    void function3() {
+        float x = d.withdraw(100000);
+        Assertions.assertEquals(1100000, d.getSavings());
+        float y = d.withdraw(2000000000);
+        Assertions.assertEquals(1100000, d.getSavings());
+    }
+
 
 
 }
