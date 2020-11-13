@@ -12,10 +12,10 @@ public class Archive {
     private static Archive uniqueInstance;
 
     // the list of all the customers
-    private ArrayList<Customer> customerList = new ArrayList<Customer>();
+    private ArrayList<Customer> customerList = new ArrayList<Customer>(3000);
 
     // the list of all the employees
-    private ArrayList<BankEmployee> employeeList = new ArrayList<BankEmployee>();
+    private ArrayList<BankEmployee> employeeList = new ArrayList<BankEmployee>(3000);
 
 
     public static Archive getInstance(){
@@ -68,8 +68,8 @@ public class Archive {
 
     // burn the archive down to the ground and start anew
     public void reset() {
-        customerList = new ArrayList<Customer>();
-        employeeList = new ArrayList<BankEmployee>();
+        customerList = new ArrayList<Customer>(3000);
+        employeeList = new ArrayList<BankEmployee>(3000);
         CustomerCounter.getInstance().resetID();
         EmployeeCounter.getInstance().resetID();
     }

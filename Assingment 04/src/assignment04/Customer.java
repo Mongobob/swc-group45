@@ -110,7 +110,7 @@ public class Customer {
 
     // (3) bank transfer paying successful if there are enough savings
     public void payingWithTransfer(float amount) {
-        if (amount <= savings) { // enough money -> transfer money
+        if (amount <= savings) { // enough money -> transfer money2
             savings = savings - amount;
         }
         // not enough money -> nothing happens
@@ -144,9 +144,20 @@ public class Customer {
     // save him/her in the list of said employee
     private int getServed() {
         Random rand = new Random();
-        int empId = rand.nextInt(Archive.getInstance().amountEmployee()); // randomly decide which of our employees gets this customer
-        Archive.getInstance().getEmployee(empId).myCustomers().add(this); // assign customer in list of employee
-        return empId; // return id of the responsible employee
+        int empId = -1;
+
+        try {
+            NoBankEmployeesException.hasBankStaff();
+
+            // this code only gets executed if there are employees
+            do {
+                empId = rand.nextInt(Archive.getInstance().amountEmployee()); // randomly decide which of our employees gets this customer
+            } while (!(Archive.getInstance().getEmployee(empId) instanceof BankEmployee));
+        } catch (NoBankEmployeesException e) {
+            System.out.println(e.toString());
+        }
+
+        return empId; // return id of the responsible employee, -1 if invalid because no employees available.
     }
 
 }
