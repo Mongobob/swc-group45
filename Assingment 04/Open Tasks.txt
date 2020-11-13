@@ -1,5 +1,16 @@
-Anthony: 	Upgrades/Downgrades
-Sandro: 	Expiration Date
+Josip:	- BankEmployee
+	- RegularEmployee
+	- MainChief
+	- SectionChief
+	- BackEndTechnician
+	- WebTechnician
 
-Open: 		- TestUnits
-		- Hash/-arraylist
+Anthony:- Archive
+	- EmployeeCounter
+	- CustomerCounter
+
+Sandro:	- Customer
+	- CustomerType
+	- CreditCard
+	- CreditCardType
+
