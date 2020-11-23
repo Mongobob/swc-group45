@@ -21,7 +21,7 @@ public class CentralOffice {
 
     public void addOffice(CityOffice cityoffice){
         for (int i =0; i<allOffices.size();i++){
-            if(cityoffice.getCity()==allOffices.get(i).getCity()){
+            if(cityoffice.getCity().equals(allOffices.get(i).getCity())){
                 System.out.print("there's already an office registered in this city");
                 throw new UnsupportedOperationException();
             }
@@ -36,13 +36,16 @@ public class CentralOffice {
     }
 
 
-    public void printAllOffices(){
-        for (int i =0; i<allOffices.size();i++){
-            System.out.print("[");
-            allOffices.get(i).printName();
-            System.out.print("], ");
-            allOffices.get(i).printAllBakeries();
+    public void printAllOffices() {
+        for (int i = 0; i < allOffices.size(); i++) {
+            if (i == allOffices.size() - 1 && i == 0) {
+                System.out.print("[");
+                allOffices.get(i).printName();
+                System.out.print("], ");
+                allOffices.get(i).printAllBakeries();
+            }
         }
+        System.out.print("\n");
     }
 
 }

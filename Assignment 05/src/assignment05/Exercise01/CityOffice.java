@@ -15,10 +15,10 @@ public class CityOffice {
 
     public void addBakery(Bakery bakery) {
         for (int i = 0; i < localBakeries.size(); i++) {
-            if (bakery.getName() == localBakeries.get(i).getName()) {
+            if (bakery.getName().equals(localBakeries.get(i).getName())) {
                 System.out.print("Bakery-Names have to be unique");
                 throw new UnsupportedOperationException();
-            } else if (bakery.getCity() == city) {
+            } else if(! bakery.getCity().equals(city)) {
                 System.out.print("Bakeries have to be in the same city as the city-offices");
                 throw new UnsupportedOperationException();
             }
@@ -46,7 +46,7 @@ public class CityOffice {
     public void printAllBakeries() {
 
         for (int i = 0; i < localBakeries.size(); i++) {
-            if (i == localBakeries.size() -1 && i == 0) {
+            if (i == localBakeries.size() -1) {
                 System.out.print("[" + localBakeries.get(i).getName() + "] ");
             } else {
                 System.out.print("[" + localBakeries.get(i).getName() + "], ");

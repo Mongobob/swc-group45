@@ -5,6 +5,8 @@
     <option name="MAIN_CLASS_NAME" value="src.assignment05.Exercise01.Main" />
     <module name="swc-group45" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment 05/src/assignment05/Exercise01" />
-    <method v="2" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
   </configuration>
 </component>

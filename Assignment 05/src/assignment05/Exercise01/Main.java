@@ -10,9 +10,7 @@ public class Main {
         CentralOffice centraloffice = CentralOffice.getInstance();
         centraloffice.addOffice(baselOffice);
         centraloffice.printAllOffices();
-        System.out.print(baselOffice.getCity());
         BreadBakery bak2 = new BreadBakery("Sandwichwizard","Sesame-Street",27,"8051","Basel");
-        System.out.print(bak2.getCity());
         baselOffice.addBakery(bak2);
         centraloffice.printAllOffices();
 
