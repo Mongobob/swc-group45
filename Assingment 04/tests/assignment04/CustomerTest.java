@@ -77,6 +77,4 @@ public class CustomerTest {
         Assertions.assertEquals(1100000, d.getSavings());
     }
 
-
-
 }
