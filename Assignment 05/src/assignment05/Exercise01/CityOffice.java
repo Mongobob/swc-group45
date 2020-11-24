@@ -1,4 +1,4 @@
-package src.assignment05.Exercise01;
+package assignment05.Exercise01;
 import java.util.ArrayList;
 
 public class CityOffice {
