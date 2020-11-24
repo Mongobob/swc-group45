@@ -3,24 +3,27 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment 02/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment 03/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assingment 04/src/assingment 04" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assingment 04/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assingment 04/TestCases" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Assingment05/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment 05/Exercise 01" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment 05" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 01" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 02" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 02/src" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 03" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 03/src" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 04" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 05/tests" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" scope="TEST">
-      <library name="testng">
-        <CLASSES>
-          <root url="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/com/beust/jcommander/1.72/jcommander-1.72.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
+      <library name="JUnit5.4">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.4.2/junit-jupiter-5.4.2.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar!/" />
