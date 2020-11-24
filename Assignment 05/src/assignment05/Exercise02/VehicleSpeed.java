@@ -6,17 +6,17 @@ public interface VehicleSpeed {
 
     class slowSpeed implements VehicleSpeed{
         public String speed() {
-            return "slow speed";
+            return "slow speed; ";
         }
     }
     class normalSpeed implements VehicleSpeed{
         public String speed() {
-            return "normal speed";
+            return "normal speed; ";
         }
     }
     class fastSpeed implements VehicleSpeed{
         public String speed() {
-            return "fast speed";
+            return "fast speed; ";
         }
     }
 }
