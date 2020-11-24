@@ -2,6 +2,15 @@ package assignment05.Exercise02;
 
 public class Vehicles{
 
+    /**
+     * Car type
+     */
+
+    public CarType carType;
+
+    public String CarType(){return carType.carType();}
+    public void getCarType(CarType newCar){carType = newCar;}
+
 
     /**
      * Vehicle accessibility private or public

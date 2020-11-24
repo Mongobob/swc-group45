@@ -7,19 +7,19 @@ public interface VehicleConsumption {
     class electric implements VehicleConsumption{
 
         public String consumption() {
-            return "electric";
+            return "electric; ";
         }
     }
     class gasoline implements VehicleConsumption {
 
         public String consumption() {
-            return "gasoline";
+            return "gasoline; ";
         }
     }
     class diesel implements VehicleConsumption {
 
         public String consumption() {
-            return "diesel";
+            return "diesel; ";
         }
     }
 }

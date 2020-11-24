@@ -7,14 +7,14 @@ public interface VehicleAccessibility {
     class PublicAccessible implements VehicleAccessibility{
 
         public String accessibility() {
-            return "public";
+            return "public ";
         }
     }
 
     class notPublicAccessible implements VehicleAccessibility{
 
         public String accessibility() {
-            return "private";
+            return "private ";
         }
     }
 

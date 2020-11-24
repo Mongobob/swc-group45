@@ -4,6 +4,7 @@ public class MicroCar extends Vehicles {
 
     public MicroCar(){
         super();
+        carType = new CarType.MicroCar();
         luggageType = new Luggage.oneBag();
         VAtype = new VehicleAccessibility.notPublicAccessible();
         CostType = new VehicleCost.twelvePerHour();
