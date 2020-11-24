@@ -1,25 +1,73 @@
 package assignment05.Exercise02;
 
-public interface Vehicles {
-
-    String carType();
-    String accessibility();
-    String luggage();
-    String speed();
-    String cost();
-    String consumptionType();
+public class Vehicles{
 
 
+    /**
+     * Vehicle accessibility private or public
+     */
+    public VehicleAccessibility VAtype;
 
-    /** we need
-     * Micro car / private car / 1 bag / normal speed / 12CHF/h / electric car
-     * Family car / private car / 2 small bags and 2 large bags / normal speed / 15CHF/h / gasoline
-     * Supercar / private car / 1 small bag and 1 large bag / fast speed / 30CHF/h / gasoline
-     * Bus / public car / infinite amount of luggage / slow speed / 5CHF/h
+    public String VAtype(){
+        return VAtype.accessibility();
+    }
+    public void getVAtype(VehicleAccessibility newVAtype){
+        VAtype = newVAtype;
+    }
+
+
+    /**
+     * Amount of the luggage
+     */
+    public Luggage luggageType;
+
+    public String Luggage(){
+        return luggageType.amountOfLuggage();
+    }
+
+    public void getLuggageType(Luggage newLuggageType){
+        luggageType = newLuggageType;
+    }
+
+    /**
+     * Vehicle speed
      */
 
-}
+    public VehicleSpeed SpeedType;
 
-class CarType implements Vehicles{
+    public String Speed(){
+        return SpeedType.speed();
+    }
+    public void getSpeed(VehicleSpeed newSpeedtype){
+        SpeedType = newSpeedtype;
+    }
+
+    /**
+     * Vehicle cost
+     */
+
+    public VehicleCost CostType;
+
+    public String Cost(){
+        return CostType.costPerHour();
+    }
+
+    public void getCost(VehicleCost newCostype){
+        CostType = newCostype;
+    }
+
+    /**
+     * Vehicle consumption
+     */
+
+    public VehicleConsumption ConsumptionType;
+
+    public String Consumption(){
+        return ConsumptionType.consumption();
+    }
+
+    public void getConsumption(VehicleConsumption newConsumptiontype){
+        ConsumptionType = newConsumptiontype;
+    }
 
 }
