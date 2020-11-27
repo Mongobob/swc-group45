@@ -1,6 +1,9 @@
 package assignment05.Exercise02;
 
 public class Bus extends Vehicles {
+    /**
+     * we inherit here from Vehicles
+     */
     public Bus(){
         super();
         carType = new CarType.Bus();
