@@ -28,7 +28,7 @@ public class Customer {
         // depending on car type set the vehicle
         switch (vehicle) {
             case MicroCar  -> transport = new MicroCar();
-            case FamilyCar -> transport = new FamiliyCar();
+            case FamilyCar -> transport = new FamilyCar();
             case Supercar  -> transport = new SuperCar();
             case Bus       -> transport = new Bus();
         }
@@ -44,12 +44,16 @@ public class Customer {
 
     public static void main(String[] args) {
 
+        // just test if it works without customer
         MicroCar a = new MicroCar();
 
         System.out.println(a.CarType() + a.Luggage()+ a.Speed()+a.Cost());
 
         SuperCar c = new SuperCar();
         System.out.println(c.CarType() + c.Luggage()+ c.Speed()+c.Cost());
+
+
+        // now it should work with the customer when he chooses the date and the car type
 
         Customer b = new Customer(VehicleType.Bus,"31/12/2020");
         System.out.println(b.ride());

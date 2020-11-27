@@ -2,6 +2,9 @@ package assignment05.Exercise02;
 
 public interface CarType {
 
+    /**
+     * @return depends on car type which one we want
+     */
     String carType();
 
     class MicroCar implements CarType{

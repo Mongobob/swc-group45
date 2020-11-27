@@ -1,8 +1,8 @@
 package assignment05.Exercise02;
 
-public class FamiliyCar extends Vehicles{
+public class FamilyCar extends Vehicles{
 
-    public FamiliyCar(){
+    public FamilyCar(){
         super();
         carType = new CarType.FamilyCar();
         luggageType = new Luggage.TwoSmallTwoLarge();
