@@ -4,6 +4,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * the customer is the main class, it combines all the cars and can choose one of them
+ * when the date is given we can see as an output which abilities the car has
+ *
+ * @return car type and his details given the departure date
+ * @version 1.0
+ * @since 27.11.2020
+ */
+
+
 public class Customer {
 
     public enum VehicleType {MicroCar, FamilyCar, Supercar, Bus};

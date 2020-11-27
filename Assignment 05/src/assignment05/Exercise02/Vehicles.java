@@ -1,5 +1,14 @@
 package assignment05.Exercise02;
 
+/**
+ * This is the superclass which contains all the interfaces
+ * from here the subclasses inherit to build themself
+ *
+ * @version 1.0
+ * @since 27.11.2020
+ */
+
+
 public class Vehicles{
 
     /**
