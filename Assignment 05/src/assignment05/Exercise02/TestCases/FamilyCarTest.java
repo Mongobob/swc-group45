@@ -103,9 +103,9 @@ class FamilyCarTest {
 
     @Test
     void cost() {
-        assertEquals("15CHF/h",f.costPerHour());
+        assertEquals("15 CHF/h",f.costPerHour());
         try {
-            if ("15CHF/h".equals(f.costPerHour())){
+            if ("15 CHF/h".equals(f.costPerHour())){
                 System.out.println(f.costPerHour());
             }
         }
@@ -117,9 +117,9 @@ class FamilyCarTest {
 
     @Test
     void getCost() {
-        assertEquals("15CHF/h",f.costPerHour());
+        assertEquals("15 CHF/h",f.costPerHour());
         try {
-            if ("15CHF/h".equals(f.costPerHour())){
+            if ("15 CHF/h".equals(f.costPerHour())){
                 System.out.println(f.costPerHour());
             }
         }

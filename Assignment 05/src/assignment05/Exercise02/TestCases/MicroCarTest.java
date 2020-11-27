@@ -104,9 +104,9 @@ class MicroCarTest {
 
     @Test
     void cost() {
-        assertEquals("12CHF/h",f.costPerHour());
+        assertEquals("12 CHF/h",f.costPerHour());
         try {
-            if ("12CHF/h".equals(f.costPerHour())){
+            if ("12 CHF/h".equals(f.costPerHour())){
                 System.out.println(f.costPerHour());
             }
         }
@@ -118,9 +118,9 @@ class MicroCarTest {
 
     @Test
     void getCost() {
-        assertEquals("12CHF/h",f.costPerHour());
+        assertEquals("12 CHF/h",f.costPerHour());
         try {
-            if ("12CHF/h".equals(f.costPerHour())){
+            if ("12 CHF/h".equals(f.costPerHour())){
                 System.out.println(f.costPerHour());
             }
         }

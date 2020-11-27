@@ -109,9 +109,9 @@ class BusTest {
 
     @Test
     void cost() {
-        assertEquals("5CHF/h",f.costPerHour());
+        assertEquals("5 CHF/h",f.costPerHour());
         try {
-            if ("5CHF/h".equals(f.costPerHour())){
+            if ("5 CHF/h".equals(f.costPerHour())){
                 System.out.println(f.costPerHour());
             }
         }
@@ -123,9 +123,9 @@ class BusTest {
 
     @Test
     void getCost() {
-        assertEquals("5CHF/h",f.costPerHour());
+        assertEquals("5 CHF/h",f.costPerHour());
         try {
-            if ("5CHF/h".equals(f.costPerHour())){
+            if ("5 CHF/h".equals(f.costPerHour())){
                 System.out.println(f.costPerHour());
             }
         }
