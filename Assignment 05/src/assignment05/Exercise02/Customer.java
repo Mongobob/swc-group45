@@ -49,7 +49,9 @@ public class Customer {
     }
 
     public String getDepartureDay() {
-        return departureDay.toString();
+        SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
+        String value = DateFor.format(departureDay);
+        return value;
     }
 
     public static void main(String[] args) {

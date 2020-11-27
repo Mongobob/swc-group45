@@ -4,7 +4,7 @@ import assignment05.Exercise02.CarType;
 import assignment05.Exercise02.Luggage;
 import assignment05.Exercise02.VehicleCost;
 import assignment05.Exercise02.VehicleSpeed;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import javax.lang.model.type.NullType;
 
