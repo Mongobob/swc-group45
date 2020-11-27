@@ -8,9 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * The test is here to check if the functionalities of the
  * code work and if the assumed output is true
  *
+ * Checked functionalities are the kind of vehicle a costumer
+ * can choose and the date at which they would like to use it.
  *
- * @version 1.2
+ * @version 1.5
  * @since 27.11.2020
+ * @author Josip Harambasic & Anthony Wernli
  */
 
 class CustomerTest {
