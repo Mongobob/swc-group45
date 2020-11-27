@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * The test is here to check if the functionalities of the
  * code work and if the assumed output is true
  *
- * 
+ *
  * @version 1.2
  * @since 27.11.2020
  */
