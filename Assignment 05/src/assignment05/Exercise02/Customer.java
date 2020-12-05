@@ -16,12 +16,10 @@ import java.util.Date;
 
 public class Customer {
 
-    public enum VehicleType {MicroCar, FamilyCar, Supercar, Bus};
-
     private Date departureDay;
     private Vehicles transport;
 
-    public Customer(VehicleType vehicle, String date){
+    public Customer(Vehicles vehicle, String date){
 
         // Generate a date in case the input is incorrect and then assign the departure day
         Date d = new Date();
@@ -36,11 +34,16 @@ public class Customer {
         departureDay = d;
 
         // depending on car type set the vehicle
-        switch (vehicle) {
-            case MicroCar  -> transport = new MicroCar();
-            case FamilyCar -> transport = new FamilyCar();
-            case Supercar  -> transport = new SuperCar();
-            case Bus       -> transport = new Bus();
+        if (vehicle instanceof MicroCar){
+            transport = new MicroCar(); }
+        else if (vehicle instanceof FamilyCar) {
+            transport = new FamilyCar(); }
+        else if (vehicle instanceof SuperCar) {
+            transport = new SuperCar();
+        } else if (vehicle instanceof Bus) {
+            transport = new Bus();
+        } else {
+            throw new UnsupportedOperationException();
         }
     }
 
@@ -66,8 +69,8 @@ public class Customer {
 
 
         // now it should work with the customer when he chooses the date and the car type
-
-        Customer b = new Customer(VehicleType.Bus,"31/12/2020");
+        Bus bus = new Bus();
+        Customer b = new Customer(bus,"31/12/2020");
         System.out.println(b.ride());
 
     }

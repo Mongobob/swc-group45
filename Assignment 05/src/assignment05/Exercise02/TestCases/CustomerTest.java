@@ -1,6 +1,6 @@
 package assignment05.Exercise02.TestCases;
 
-import assignment05.Exercise02.Customer;
+import assignment05.Exercise02.*;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,11 +26,15 @@ class CustomerTest {
     // Set up - Called before each method to generate customer
     @BeforeEach
     public void setUp() {
+        Vehicles microCar = new MicroCar();
+        Vehicles familyCar = new FamilyCar();
+        Vehicles superCar = new SuperCar();
+        Vehicles bus = new Bus();
         // initialize various customers
-        a = new Customer( Customer.VehicleType.MicroCar, "10/12/2020");
-        b = new Customer( Customer.VehicleType.FamilyCar, "11/12/2020");
-        c = new Customer( Customer.VehicleType.Supercar, "12/12/2020");
-        d = new Customer( Customer.VehicleType.Bus, "13/12/2020");
+        a = new Customer( microCar, "10/12/2020");
+        b = new Customer( familyCar, "11/12/2020");
+        c = new Customer( superCar, "12/12/2020");
+        d = new Customer( bus, "13/12/2020");
     }
 
     // Tear down - Called after every test method.
