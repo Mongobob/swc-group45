@@ -17,7 +17,7 @@ import java.util.Date;
 public class Customer {
 
     private Date departureDay;
-    private Vehicles transport;
+    private Vehicles vehicle;
 
     public Customer(Vehicles vehicle, String date){
 
@@ -33,22 +33,11 @@ public class Customer {
 
         departureDay = d;
 
-        // depending on car type set the vehicle
-        if (vehicle instanceof MicroCar){
-            transport = new MicroCar(); }
-        else if (vehicle instanceof FamilyCar) {
-            transport = new FamilyCar(); }
-        else if (vehicle instanceof SuperCar) {
-            transport = new SuperCar();
-        } else if (vehicle instanceof Bus) {
-            transport = new Bus();
-        } else {
-            throw new UnsupportedOperationException();
-        }
+        this.vehicle = vehicle;
     }
 
     public String ride(){
-        return transport.CarType() + transport.Luggage() + transport.Speed() + transport.Cost();
+        return vehicle.CarType() + vehicle.Luggage() + vehicle.Speed() + vehicle.Cost();
     }
 
     public String getDepartureDay() {
