@@ -1,4 +1,5 @@
 package assignment06.Exercise01;
+import java.awt.*;
 import java.util.Random;
 public class EmployeeModel {
 

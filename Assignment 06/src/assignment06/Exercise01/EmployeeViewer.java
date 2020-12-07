@@ -4,12 +4,17 @@ import javax.swing.*;
 
 public class EmployeeViewer extends JFrame {
 
-    private JLabel newAddress = new JLabel("set your new address");
-    private JTextField address = new JTextField(15);
-    private JButton save = new JButton("save");
-    private JTextField phoneNumber = new JTextField(15);
-    private JButton newAddressButton = new JButton("save new address");
-    private JButton newPhoneNumber = new JButton("save new phone number");
+    private final JLabel newAddress = new JLabel("set your new address");
+    private final JTextField address = new JTextField(15);
+    private final JButton save = new JButton("save");
+    private final JTextField phoneNumber = new JTextField(15);
+    private final JButton newAddressButton = new JButton("save new address");
+    private final JButton newPhoneNumber = new JButton("save new phone number");
+
+
+    //TODO: we need an object that has the given things in the first row
+
+    EmployeeModel MusterMann = new EmployeeModel("Hans","Muster","Eiche 12","078");
 
 
 
@@ -19,12 +24,17 @@ public class EmployeeViewer extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(400,200);
 
+        employeePanel.add(new JLabel(MusterMann.getName()));
+        employeePanel.add(new JLabel(MusterMann.getSurname()));
+        employeePanel.add(new JLabel(MusterMann.getNewAddress()));
 
-        employeePanel.add(newAddress);
-        employeePanel.add(address);
-        employeePanel.add(new JLabel("\n"));
+        employeePanel.add(new JLabel(MusterMann.getPhoneNumber()));
+        employeePanel.add(new JLabel("<html>" + MusterMann.getIDNumber() + "<br></html>"));
+        //employeePanel.add(new JLabel("<html>" + "set your new address " + "<br></html>"));
+        //employeePanel.add(address);
+
+
         employeePanel.add(new JLabel("set your new phone number"));
-        employeePanel.add(new JLabel("\n"));
 
         employeePanel.add(phoneNumber);
         employeePanel.add(save);
@@ -43,7 +53,6 @@ public class EmployeeViewer extends JFrame {
         return phoneNumber.getText();
     }
 
-
     public void setPhoneNumber(String NewNumber){
         phoneNumber.setText(NewNumber);
     }
@@ -54,10 +63,6 @@ public class EmployeeViewer extends JFrame {
 
     void addAddressListener(ActionListener listenForAddressButton){
         newAddressButton.addActionListener(listenForAddressButton);
-    }
-
-    void addPhoneNumberListener(ActionListener listenForPhoneNumber){
-        newPhoneNumber.addActionListener(listenForPhoneNumber);
     }
 
     void displayErrorMsg(){
