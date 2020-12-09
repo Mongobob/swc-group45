@@ -13,8 +13,6 @@ public class EmployeeViewer extends JFrame {
     private final JButton saveButton = new JButton("Save");
 
 
-    //TODO: we need an object that has the given things in the first row
-
     EmployeeModel MusterMann = new EmployeeModel("Hans","Muster","Eiche 12","078");
 
 
