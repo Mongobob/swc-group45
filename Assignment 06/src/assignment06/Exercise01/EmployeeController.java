@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EmployeeController {
-    private EmployeeModel theModel;
-    private EmployeeViewer theView;
+    private final EmployeeModel theModel;
+    private final EmployeeViewer theView;
 
     public EmployeeController(EmployeeViewer theView, EmployeeModel theModel){
         this.theView = theView;
