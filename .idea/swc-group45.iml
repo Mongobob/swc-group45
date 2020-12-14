@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Assignment 05/Exercise 01" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Assignment 05" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Assignment 05/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment 06/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Assignment 01" />
       <excludeFolder url="file://$MODULE_DIR$/Assignment 02" />
       <excludeFolder url="file://$MODULE_DIR$/Assignment 02/src" />
@@ -22,6 +23,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Assignment 05" />
       <excludeFolder url="file://$MODULE_DIR$/Assignment 05/src/assignment05/Exercise02" />
       <excludeFolder url="file://$MODULE_DIR$/Assignment 05/tests" />
+      <excludeFolder url="file://$MODULE_DIR$/Assignment 06/src/assignment06/Exercise01" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
