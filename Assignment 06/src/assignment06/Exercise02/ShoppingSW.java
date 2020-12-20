@@ -11,25 +11,27 @@ public class ShoppingSW {
 
     private volatile static ShoppingSW uniqueInstance;
 
-    private ShoppingSW(){}
+    private ShoppingSW() {
+    }
 
-    public static ShoppingSW getInstance(){
-        if (uniqueInstance == null){
-            synchronized (CentralOffice.class){
-                if (uniqueInstance==null){
+    public static ShoppingSW getInstance() {
+        if (uniqueInstance == null) {
+            synchronized (CentralOffice.class) {
+                if (uniqueInstance == null) {
                     uniqueInstance = new ShoppingSW();
                 }
             }
         }
         return uniqueInstance;
     }
+}
 
 
-
-    public void addCustomer(String name;String password,String level){
+/**
+    public void addCustomer(String name,String password,String level){
         if (level =="normal"){
             NormalCustomer custom();
         }
     }
-    public Customer login(String password, String clientname)
-}
+    public Customer login(String password, String clientname)}
+*/

@@ -18,5 +18,5 @@ public class Shoppingcart {
     }
     public ArrayList buyProducts(){
 
-    }
+    return null;}
 }

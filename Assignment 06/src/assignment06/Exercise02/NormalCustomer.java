@@ -17,4 +17,38 @@ public class NormalCustomer extends Customer {
     }
 
 
+    @Override
+    public void sellProduct() {
+
+    }
+
+    @Override
+    public void buyProduct() {
+
+    }
+
+    @Override
+    public void addToCart(Product product) {
+
+    }
+
+    @Override
+    public void removeFromCart(Product product) {
+
+    }
+
+    @Override
+    public void addPaymentmethod(Payment payment) {
+
+    }
+
+    @Override
+    public void removePaymentmethod(Payment payment) {
+
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }
