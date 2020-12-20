@@ -3,21 +3,14 @@ package assignment06.Exercise02;
 import java.util.ArrayList;
 
 public class CreditCard extends Payment{
-    double balance;
-    double balancecap;
-    String pin;
-    String Owner;
+    private double balancecap;
 
-    public boolean pay(ArrayList<Product> alist){
-        double totalprice =0;
-        for (int i=0; i< alist.size();i++){
-            totalprice = totalprice+  alist.get(i).getPrice();
-        }
-        return true;
+    public CreditCard(Customer initowner, double initbalancecap, String initpin){
+        pin=initpin;
+        this.balancecap=initbalancecap;
+        owner=initowner;
+    }
+    public double getBalancecap(){return balancecap;}
 
-    }
-    public double getBalance(){
-        return balance;
-    }
 
 }

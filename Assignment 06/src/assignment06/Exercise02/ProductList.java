@@ -1,6 +1,5 @@
 package assignment06.Exercise02;
 
-import assignment05.Exercise01.CentralOffice;
 
 import java.util.ArrayList;
 
@@ -12,7 +11,7 @@ public class ProductList {
 
     public static ProductList getInstance(){
         if (uniqueInstance == null){
-            synchronized (CentralOffice.class){
+            synchronized (ProductList.class){
                 if (uniqueInstance==null){
                     uniqueInstance = new ProductList();
                 }
@@ -26,6 +25,17 @@ public class ProductList {
     }
     public void removeProduct(Product product){
         allProducts.remove(product);
+    }
+    public ArrayList<Product> listProuducts(){
+        return allProducts;
+    }
+    public boolean containsProduct(Product product){
+        for(int i=0; i<allProducts.size();i++){
+            if(allProducts.get(i).equals(product)){
+                return true;
+            }
+        }
+        return false;
     }
 
 

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>assignment06.Exercise02</OriginalElement>
+  <nodes>
+    <node x="1974.7738095238096" y="1618.0">assignment06.Exercise02.Boots</node>
+    <node x="2239.7738095238096" y="1618.0">assignment06.Exercise02.Trousers</node>
+    <node x="1167.7738095238096" y="1618.0">assignment06.Exercise02.Sneakers</node>
+    <node x="1235.5" y="636.0">assignment06.Exercise02.Customer</node>
+    <node x="1714.7738095238096" y="1618.0">assignment06.Exercise02.Shirt</node>
+    <node x="1593.1100840336132" y="33.5">assignment06.Exercise02.Shoppingcart</node>
+    <node x="500.9999999999999" y="1271.5">assignment06.Exercise02.CreditCard</node>
+    <node x="1960.8988095238096" y="1518.0">assignment06.Exercise02.Clothes</node>
+    <node x="1797.6024393090568" y="1195.0">assignment06.Exercise02.Product</node>
+    <node x="1908.1111811391224" y="0.0">assignment06.Exercise02.ProductList</node>
+    <node x="1761.2738095238096" y="1722.0">assignment06.Exercise02.Main</node>
+    <node x="2158.1111811391224" y="33.0">assignment06.Exercise02.Searchbar</node>
+    <node x="281.0" y="1294.5">assignment06.Exercise02.Debitcard</node>
+    <node x="768.9999999999999" y="1271.5">assignment06.Exercise02.Banktransfer</node>
+    <node x="1558.6024393090568" y="1283.0">assignment06.Exercise02.NormalCustomer</node>
+    <node x="1266.0" y="1283.0">assignment06.Exercise02.PlatinumCustomer</node>
+    <node x="1041.0" y="1283.0">assignment06.Exercise02.GoldCustomer</node>
+    <node x="740.9999999999999" y="314.5">assignment06.Exercise02.Payment</node>
+    <node x="1656.5238095238096" y="1518.0">assignment06.Exercise02.Shoes</node>
+    <node x="1450.7738095238096" y="1618.0">assignment06.Exercise02.Dress</node>
+    <node x="0.0" y="1249.5">assignment06.Exercise02.Invoice</node>
+    <node x="1819.1111811391224" y="270.0">assignment06.Exercise02.ShoppingSW</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="assignment06.Exercise02.Invoice" target="assignment06.Exercise02.Payment">
+      <point x="-87.0" y="-72.0" />
+      <point x="43.5" y="1175.0" />
+      <point x="81.5" y="1175.0" />
+      <point x="81.5" y="566.0" />
+      <point x="748.9999999999999" y="566.0" />
+      <point x="-104.0" y="93.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.Banktransfer" target="assignment06.Exercise02.Payment">
+      <point x="-84.0" y="-50.0" />
+      <point x="810.9999999999999" y="1105.0" />
+      <point x="847.4999999999999" y="1105.0" />
+      <point x="847.4999999999999" y="616.0" />
+      <point x="844.9999999999999" y="616.0" />
+      <point x="-8.0" y="93.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.Sneakers" target="assignment06.Exercise02.Shoes">
+      <point x="65.75" y="-27.0" />
+      <point x="1365.0238095238096" y="1578.0" />
+      <point x="1678.5238095238096" y="1578.0" />
+      <point x="-22.0" y="15.0" />
+    </edge>
+    <edge source="assignment06.Exercise02.Dress" target="assignment06.Exercise02.Clothes">
+      <point x="61.0" y="-27.0" />
+      <point x="1633.7738095238096" y="1588.0" />
+      <point x="1978.232142857143" y="1588.0" />
+      <point x="-34.666666666666686" y="15.0" />
+    </edge>
+    <edge source="assignment06.Exercise02.PlatinumCustomer" target="assignment06.Exercise02.Customer">
+      <point x="0.0" y="-27.0" />
+      <point x="577.5" y="454.0" />
+      <point x="437.5" y="454.0" />
+      <point x="96.0" y="214.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.GoldCustomer" target="assignment06.Exercise02.Customer">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="214.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.NormalCustomer" target="assignment06.Exercise02.Customer">
+      <point x="-54.75" y="-38.5" />
+      <point x="1613.3524393090568" y="1165.0" />
+      <point x="1410.3571428571427" y="1165.0" />
+      <point x="30.85714285714289" y="214.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.CreditCard" target="assignment06.Exercise02.Payment">
+      <point x="-82.66666666666674" y="-50.0" />
+      <point x="542.3333333333331" y="1105.0" />
+      <point x="578.1666666666665" y="1105.0" />
+      <point x="578.1666666666665" y="606.0" />
+      <point x="812.9999999999999" y="606.0" />
+      <point x="-40.0" y="93.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.Clothes" target="assignment06.Exercise02.Product">
+      <point x="0.0" y="-15.0" />
+      <point x="2012.8988095238096" y="1488.0" />
+      <point x="1899.1738678804852" y="1488.0" />
+      <point x="22.571428571428555" y="126.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.Shirt" target="assignment06.Exercise02.Clothes">
+      <point x="60.0" y="-27.0" />
+      <point x="1894.7738095238096" y="1598.0" />
+      <point x="2012.8988095238096" y="1598.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="assignment06.Exercise02.Shoes" target="assignment06.Exercise02.Product">
+      <point x="0.0" y="-15.0" />
+      <point x="1700.5238095238096" y="1498.0" />
+      <point x="1854.031010737628" y="1498.0" />
+      <point x="-22.571428571428555" y="126.5" />
+    </edge>
+    <edge source="assignment06.Exercise02.Boots" target="assignment06.Exercise02.Shoes">
+      <point x="-61.25" y="-27.0" />
+      <point x="2036.0238095238096" y="1568.0" />
+      <point x="1722.5238095238096" y="1568.0" />
+      <point x="22.0" y="15.0" />
+    </edge>
+    <edge source="assignment06.Exercise02.Trousers" target="assignment06.Exercise02.Clothes">
+      <point x="-65.0" y="-27.0" />
+      <point x="2304.7738095238096" y="1588.0" />
+      <point x="2047.5654761904761" y="1588.0" />
+      <point x="34.66666666666663" y="15.0" />
+    </edge>
+    <edge source="assignment06.Exercise02.Debitcard" target="assignment06.Exercise02.Payment">
+      <point x="0.0" y="-27.0" />
+      <point x="381.0" y="1105.0" />
+      <point x="353.1666666666665" y="1105.0" />
+      <point x="353.1666666666665" y="596.0" />
+      <point x="796.9999999999999" y="596.0" />
+      <point x="-56.0" y="93.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3886733902249806" x="1279.0" y="888.0" />
+  <SelectedNodes>
+    <node>assignment06.Exercise02.Invoice</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

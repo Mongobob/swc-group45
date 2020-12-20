@@ -3,16 +3,17 @@ package assignment06.Exercise02;
 import java.util.ArrayList;
 
 public class Invoice extends Payment {
-    String IBAN;
-    String Address;
+    private String IBAN;
+    private String Address;
 
-    public boolean pay(ArrayList<Product> alist){
-        double totalprice =0;
-        for (int i=0; i< alist.size();i++){
-            totalprice = totalprice+  alist.get(i).getPrice();
-        }
-        return true;
-
+    public Invoice(String initIBAN, String initAdress,Customer initowner){
+        this.IBAN=initIBAN;
+        this.Address=initAdress;
+        owner=initowner;
     }
+    public String getIBAN(){return IBAN;}
+    public String getAddress(){return Address;}
+
+
 
 }

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Shoppingcart {
     private ArrayList<Product> cart;
 
+    public Shoppingcart(){}
+
     public void addToCart(Product prod){
         cart.add(prod);
     }
@@ -16,7 +18,7 @@ public class Shoppingcart {
     public void removeFromCart(Product product){
         cart.add(product);
     }
-    public ArrayList buyProducts(){
-
-    return null;}
+    public ArrayList<Product> buyProducts(){
+        return cart;
+    }
 }
