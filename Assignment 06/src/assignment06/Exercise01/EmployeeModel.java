@@ -1,7 +1,7 @@
 package assignment06.Exercise01;
 import java.awt.*;
 import java.util.Random;
-public class EmployeeModel {
+public class EmployeeModel implements Observer {
 
     private String name;
     private String surname;
@@ -58,4 +58,8 @@ public class EmployeeModel {
     }
 
 
+    @Override
+    public void update() {
+
+    }
 }
