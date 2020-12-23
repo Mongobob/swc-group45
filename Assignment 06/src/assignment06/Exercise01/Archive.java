@@ -6,17 +6,17 @@ public class Archive {
 
     ArrayList<EmployeeModel> listEmp = new ArrayList<>();
 
-    Archive Data;
+    static Archive Data;
 
     private Archive(){
         Data = this;
     }
 
-    public Archive getInstance(){
+    public static Archive getInstance(){
         if (Data == null){
             return Data;
         }
-        else return this;
+        else return new Archive();
     }
 
 }

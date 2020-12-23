@@ -74,8 +74,14 @@ public class EmployeeViewer extends JFrame implements Observer {
         clearButton.setBounds(105,210,80,25);
         employeePanel.add(clearButton);
 
-        this.addListener(new Listener(new PerformAction.cleanWindow(),employeePanel),clearButton);
+
+        PerformAction [] perf = {new PerformAction.saveEmployee(),new PerformAction.cleanWindow()};
+
+
+
+        this.addListener(new Listener(perf,employeePanel),clearButton);
         this.add(employeePanel);
+
 
 
 
